@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="Style/CodesCouleurs.css" rel="stylesheet">
+<link href="Style/anim.css" rel="stylesheet">
+<link href="Style/Boutons.css" rel="stylesheet">
+
+<title>Scrolling Subtitles</title>
+
+</head>
+<body>
+
+
+<div id="infoSTTH">info</div>
+<div id="timingSTTH">time</div>
+
+<div id="button-container">
+    <button id="police1" onclick="changeFontSize('increase')">T+</button>
+    <button id="police2" onclick="changeFontSize('decrease')">T-</button>
+    <div id="police"> </div>
+    <p></p>
+    <button id="hauteur1" onclick="adjustHeight('increase')">+</button>  
+    <button id="hauteur2" onclick="adjustHeight('decrease')">-</button>
+    <div id="hauteur"> </div>
+    <p></p>
+    <button id="largeur1" onclick="adjustWidth('increase')">+</button>  
+    <button id="largeur2" onclick="adjustWidth('decrease')">-</button>
+    <div id="largeur"> </div>
+    <p></p>
+
+</div>
+
+
+<div id="contentSTT">
+  <div id="scrollSTT">  
+      <div id="STT"></div>
+  </div>
+</div>
+<div id="vide"></div>
+
+<script src="scripts/InfoAnimHideShow.js">// gestion des événements d'interaction et l'inactivité
+</script>
+<script src="scripts/fullScreen.js">// gestion d'affichage plein écran/écran normal
+</script>
+<script src="scripts/extractScriptForShowSTT.js">// extraction du script texte pour affichage
+</script>
+<script>
+
+const ScrollSTTDiv  = document.getElementById('scrollSTT');
+const STTDiv        = document.getElementById('STT');
+let subtitles;
+
+    let posSTT = 0;             // position liste des STTs
+    let currentTime = 0;        // 
+    const vitUser = 30;   // en px/secondes (modifiable par l'utilisateur pour un confort de lecture)
+    let lastPos = 0;//subtitles.length - 1;
+    let totalDuration = 0;//subtitles[lastPos].endTime - subtitles[0].startTime;
+
+
+// ================================================================================== 
+window.onload = function() {
+        resetOnLoad();
+
+        ScrollSTTDiv.style.border = "0px solid #FFF";
+        var bodyElement = document.body;
+        requestFullscreen(bodyElement);   // NO OK
+        //fetch('srt/scriptSTTofficiel.srt')
+
+        fetch('srt/scriptSTTofficielAvecCouleurs.srt')
+        //fetch('srt/valerie.srt')
+        // fetch('vtt/scriptSTT.srt')
+        // fetch('srt/scriptBon.srt')
+        .then(response => response.text())
+        .then(data => {
+             subtitles = parseSrt(data);
+            displaySubtitlesSTT(subtitles);
+            cacherAfficherBtns();
+            })
+        .catch(error => console.error('Error fetching subtitles:', error));
+}
+
+
+// ==================================================================================
+// Affichage des informations
+function showInfo(subtitle, subtitlesLength) {
+    const timingDiv = document.getElementById('timingSTT');
+    const timingDivH = document.getElementById('timingSTTH');
+    const infoDivH = document.getElementById('infoSTTH');
+
+    // Calcul de la hauteur de l'élément text-container
+    let textContainerHeight = STTDiv.offsetHeight;
+
+    // Calcul de la hauteur de l'élément scrolling-text
+    let scrollingTextHeight = ScrollSTTDiv.offsetHeight;
+
+    var dureeSTT = subtitle.endTime - subtitle.startTime ;
+    var currentTimeSTT = currentTime - subtitle.startTime;
+
+    infoDivH.textContent = "Durée totale: " + convertTimeToTimeH(totalDuration) + "s ==> " + " scrollHeight : " + scrollingTextHeight + " -  textHeight : " + textContainerHeight 
+               
+    timingDivH.textContent = "Position: " + (posSTT+1) + "/" + subtitlesLength + " - [" + subtitle.startTimeH  + " --> " + subtitle.endTimeH + "] - [" + convertTimeToTimeH(currentTime) + "] - durée STT: " + convertTimeToTimeH(dureeSTT) + " - [" + convertTimeToTimeH(currentTimeSTT) + "] " ;
+
+}
+
+function showInfosBts() {
+    var currentFontSize = window.getComputedStyle(ScrollSTTDiv, null).getPropertyValue('font-size');
+    var fontSizeValue = parseFloat(currentFontSize);
+    // var currentSpeed = window.getComputedStyle(STTDiv, null).getPropertyValue('animation-duration');
+    var tailleTxt = document.getElementById('police');
+    var vitesseTxt = document.getElementById('vitesse');
+    var hauteurTxt = document.getElementById('hauteur');
+    var largeurTxt = document.getElementById('largeur');
+    let textContainerHeight = ScrollSTTDiv.offsetHeight;   // Largeur effective de scrollSTT
+    let textContainerWidth = ScrollSTTDiv.offsetWidth;     // Hauteur effective de scrollSTT
+    var windowWidth = window.innerWidth;                // Largeur de la fenêtre du navigateur
+    var windowHeight = window.innerHeight;              // Hauteur de la fenêtre du navigateur
+    var widthPercentage = Math.round((textContainerWidth / windowWidth) * 100); // Calcul de la largeur en pourcentage
+    var heightPercentage = Math.round((textContainerHeight / windowHeight) * 100); // Calcul de la hauteur en pourcentage
+
+    tailleTxt.textContent = 'taille : ' + fontSizeValue + 'px';
+    hauteurTxt.textContent = 'hauteur = ' + heightPercentage + '%';
+    largeurTxt.textContent = 'largeur = ' + widthPercentage + '%';
+}
+
+// ==================================================================================
+// Gestion des events boutons
+function cacherInfos(action) {
+    if(document.getElementById("infoSTTH").style.color == "white") {
+        document.getElementById("infoSTTH").style.color = "black";
+        document.getElementById("timingSTTH").style.color = "black";
+        document.getElementById("idshowinfos").textContent = "afficher infos";
+
+    } else {
+        document.getElementById("infoSTTH").style.color = "white";
+        document.getElementById("timingSTTH").style.color = "white";
+        document.getElementById("idshowinfos").textContent = "cacher infos";
+    }
+}
+
+
+
+function cacherAfficherBtns(action) {
+    if(document.getElementById("largeur").style.display == "none") {
+        document.getElementById("largeur").style.display = "inline-block";
+        document.getElementById("largeur1").style.display = "inline-block";
+        document.getElementById("largeur2").style.display = "inline-block";
+        document.getElementById("hauteur").style.display = "inline-block";
+        document.getElementById("hauteur1").style.display = "inline-block";
+        document.getElementById("hauteur2").style.display = "inline-block";
+        document.getElementById("police").style.display = "inline-block";
+        document.getElementById("police1").style.display = "inline-block";
+        document.getElementById("police2").style.display = "inline-block";
+        if(document.getElementById("idbtns")) {document.getElementById("idbtns").textContent = "cacher boutons";}
+        if(document.getElementById("vitesse")) {document.getElementById("vitesse").style.display = "inline-block";}
+        if(document.getElementById("vitesse1")) {document.getElementById("vitesse1").style.display = "inline-block";}
+        if(document.getElementById("vitesse2")) {document.getElementById("vitesse2").style.display = "inline-block";}
+    } else {
+        document.getElementById("largeur").style.display = "none";
+        document.getElementById("largeur1").style.display = "none";
+        document.getElementById("largeur2").style.display = "none";
+        document.getElementById("hauteur").style.display = "none";
+        document.getElementById("hauteur1").style.display = "none";
+        document.getElementById("hauteur2").style.display = "none";
+        document.getElementById("police").style.display = "none";
+        document.getElementById("police1").style.display = "none";
+        document.getElementById("police2").style.display = "none";
+        if(document.getElementById("idbtns")) {document.getElementById("idbtns").textContent = "afficher boutons";}
+        if(document.getElementById("vitesse")) {document.getElementById("vitesse").style.display = "none";}
+        if(document.getElementById("vitesse1")) {document.getElementById("vitesse1").style.display = "none";}
+        if(document.getElementById("vitesse2")) {document.getElementById("vitesse2").style.display = "none";}
+    }
+}
+function changeFontSize(action) {
+    var currentFontSize = window.getComputedStyle(ScrollSTTDiv, null).getPropertyValue('font-size');
+    var fontSizeValue = parseFloat(currentFontSize);
+
+    if (action === 'increase') {
+        fontSizeValue += 2; // Augmenter la taille de 2 pixels (ajustez selon vos besoins)
+    } else if (action === 'decrease') {
+        fontSizeValue -= 2; // Diminuer la taille de 2 pixels (ajustez selon vos besoins)
+    }
+
+    ScrollSTTDiv.style.fontSize = fontSizeValue + 'px';
+    showInfosBts();
+}
+
+
+function adjustHeight(action) {
+    var currentHeight = parseFloat(ScrollSTTDiv.offsetHeight);
+    if (action === 'increase') {
+        currentHeight += 20; // Augmenter la hauteur de 20px (ajustez selon vos besoins)
+    } else if (action === 'decrease') {
+        currentHeight -= 20; // Diminuer la hauteur de 20px (ajustez selon vos besoins)
+    }
+    ScrollSTTDiv.style.height = currentHeight + 'px';
+    console.log("scrollSTT.offsetHeight: "+ScrollSTTDiv.offsetHeight)
+    console.log("scrollSTT.style.height: "+ScrollSTTDiv.style.height)
+    showInfosBts();
+}
+
+function adjustWidth(action) {
+    var currentWidth = parseFloat(ScrollSTTDiv.offsetWidth);
+    if (action === 'increase') {
+        currentWidth += 20; // Augmenter la hauteur de 20px (ajustez selon vos besoins)
+    } else if (action === 'decrease') {
+        currentWidth -= 20; // Diminuer la hauteur de 20px (ajustez selon vos besoins)
+    }
+    ScrollSTTDiv.style.width = currentWidth  + 'px';
+    console.log("scrollSTT.offsetWidth: "+ScrollSTTDiv.offsetWidth)
+    console.log("scrollSTT.style.width: "+ScrollSTTDiv.style.width)
+    showInfosBts();
+}
+
+function cacherAfficher() {
+    //console.log("Fonction toggleBlackMode appelée.");
+
+    // Récupérer les éléments à modifier
+    var elementsToToggle = document.querySelectorAll('#STT, #scrollSTT');
+    console.log("Fonction toggleBlackMode appelée. Nombre d'éléments à basculer :", elementsToToggle.length);
+
+    // Parcourir chaque élément et basculer la classe 'all-black'
+    elementsToToggle.forEach(function(element) {
+        if (element.classList.contains('all-black')) {
+           // console.log("Suppression de la classe 'all-black' de l'élément :", element.id);
+            element.classList.remove('all-black');
+            document.getElementById("idshowstt").textContent = "cacher stt";
+
+        } else {
+            //console.log("Ajout de la classe 'all-black' à l'élément :", element.id);
+            element.classList.add('all-black');
+            document.getElementById("idshowstt").textContent = "afficher stt";
+
+        }
+    });
+}
+
+</script>
+
+
+
+</body>
+</html>
