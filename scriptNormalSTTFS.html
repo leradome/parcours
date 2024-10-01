@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<link href="https://cdn.jsdelivr.net/npm/boosted@5.3.3/dist/css/orange-helvetica.min.css" rel="stylesheet" integrity="sha384-A0Qk1uKfS1i83/YuU13i2nx5pk79PkIfNFOVzTcjCMPGKIDj9Lqx9lJmV7cdBVQZ" crossorigin="anonymous">
+<link href="https://cdn.jsdelivr.net/npm/boosted@5.3.3/dist/css/boosted.min.css" rel="stylesheet" integrity="sha384-laZ3JUZ5Ln2YqhfBvadDpNyBo7w5qmWaRnnXuRwNhJeTEFuSdGbzl4ZGHAEnTozR" crossorigin="anonymous">
+<link href="Style/CodesCouleurs.css" rel="stylesheet">
+<link href="Style/anim.css" rel="stylesheet">
+<link href="Style/Boutons.css" rel="stylesheet">
+    <style>
+        .full-height {
+            height: 100vh; /* 100% de la hauteur de la vue */
+            display: flex;
+            justify-content: center; /* Centrer horizontalement */
+            align-items: center; /* Centrer verticalement */
+        }
+    </style>
+<title>Scrolling Subtitles</title>
+
+</head>
+<body>
+
+
+<div id="infoSTTH" hidden="true"></div>
+<div id="timingSTTH" hidden="true"></div>
+
+
+<div id="button-container" hidden="true"> 
+    <div id="police"> </div>   
+    <button id="police2" onclick="changeFontSize('decrease')">Diminuer</button>
+    <button id="police1" onclick="changeFontSize('increase')">Agrandir</button>
+    <p></p>   
+    <div id="backgroundFont"> </div>   
+    <label for="colorSelect">Choisissez une couleur du fond du STT:</label>
+  <select id="colorSelect">
+    <option value="1">fond noir</option>
+    <option value="3">fond gris</option>
+    <option value="4">fond gris un peu plus foncé - dimgrey</option>
+    <option value="2">fond gris clair - texte noir</option>
+    <option value="5">fond gris très clair bainsboro - texte noir</option>
+    <option value="6">fond argent - texte noir</option>
+  </select>
+      <p></p>   
+     <label for="cadreSelect">Encadrer le STT ?</label>
+  <select id="cadreSelect">
+    <option value="1">non</option>
+    <option value="2">blanc</option>
+    <option value="3">gris</option>
+  </select>
+
+    <!-- <button id="polSmall" onclick="changeFontSize('verysmall')">Très petit</button>
+    <button id="polSmall" onclick="changeFontSize('small')">Petit</button>
+    <button id="polMedium" onclick="changeFontSize('medium')">Normal</button>
+    <button id="polBig" onclick="changeFontSize('big')">Grand</button>
+    <button id="polBig" onclick="changeFontSize('verybig')">Très grand</button> -->
+    <p></p>
+    
+<!--     <p></p>
+    <button id="hauteur1" onclick="changeFontSize('increase')">Agrandir</button>
+    <button id="hauteur2" onclick="changeFontSize('decrease')">Diminuer</button>
+    <div id="hauteur"> </div>
+    <p></p>
+    <button id="largeur1" onclick="changeFontSize('increase')">Agrandir</button>
+    <button id="largeur2" onclick="changeFontSize('decrease')">Diminuer</button>
+    <div id="largeur"> </div>
+    <p></p> -->
+</div>
+
+<! bouton simple : DEMARRER >
+<div id="containerGO" class="d-grid gap-2 col-6 mx-auto full-height">
+  <button id="btnGO" class="btn btn-primary btn-lg" type="button" onclick=launchSTT()>Démarrer le STT</button>
+  <button id="btnReturn" class="btn btn-secondary  btn-sm" type="button" onclick="location.href='index.html'">retour</button>
+</div>
+
+<div id="contentSTT">
+  <div id="scrollSTT">  
+      <div id="STT"></div>
+  </div>
+</div>
+<div id="vide"></div>
+
+<script src="scripts/InfoAnimHideShow.js">// gestion des événements d'interaction et l'inactivité</script>
+<script src="scripts/fullScreen.js">// gestion d'affichage plein écran/écran normal</script>
+<script src="scripts/modePaysage.js">// gestion d'affichage paysage/portrait</script>
+<script src="scripts/extractScriptForShowSTT.js">// extraction du script texte pour affichage</script>
+<script src="https://cdn.jsdelivr.net/npm/boosted@5.3.3/dist/js/boosted.bundle.min.js" integrity="sha384-3RoJImQ+Yz4jAyP6xW29kJhqJOE3rdjuu9wkNycjCuDnGAtC/crm79mLcwj1w2o/" crossorigin="anonymous"></script>
+
+<script>
+// TODO :
+// creer un hebergeur web
+// tester sur controleur
+
+    let isDemo      = true;
+
+// ======== demarrage du STT
+ function launchSTT(action) {
+        var bodyElement = document.body;
+        requestFullscreen(bodyElement);
+        // si mobile alors mode paysage
+        goToLandscape();
+        // sinon mode portrait
+        //
+
+        resetOnLoad();
+        
+        displaySubtitlesSTT(subtitles, isDemo);
+        
+        document.getElementById("btnGO").style.display = "none";
+        document.getElementById("btnReturn").style.display = "none";
+        const containerGO  = document.getElementById('containerGO');
+        containerGO.style.height = "0vh"
+  }
+
+const ScrollSTTDiv  = document.getElementById('scrollSTT');
+const STTDiv        = document.getElementById('STT');
+let subtitles;
+
+    let posSTT = 0;             // position liste des STTs
+    let currentTime = 0;        // 
+    const vitUser = 30;   // en px/secondes (modifiable par l'utilisateur pour un confort de lecture)
+    let lastPos = 0;//subtitles.length - 1;
+    let totalDuration = 0;//subtitles[lastPos].endTime - subtitles[0].startTime;
+
+let POLICE_VERY_SMALL = 2;
+let POLICE_SMALL = 3;
+let POLICE_MEDIUM = 4;
+let POLICE_BIG = 5;
+let POLICE_VERY_BIG = 6;
+var POLICE_DEFAULT = 24;
+
+// ================================================================================== 
+window.onload = function() {
+        afficheBTNS(false);
+
+        ScrollSTTDiv.style.border = "0px solid #FFF";
+
+        fetch("srt/scriptSTTDemo.srt")
+        .then(response => response.text())
+        .then(data => {
+             subtitles = parseSrt(data);
+            })
+        .catch(error => console.error('Error fetching subtitles:', error));
+        //subtitles = parseSrt(SCRIPT_SRT); // pour script en local dans le systeme de fichiers
+}
+
+
+
+// ==================================================================================
+// Affichage des informations
+function showInfo(subtitle, subtitlesLength) {
+    const timingDiv = document.getElementById('timingSTT');
+    const timingDivH = document.getElementById('timingSTTH');
+    const infoDivH = document.getElementById('infoSTTH');
+
+    // Calcul de la hauteur de l'élément text-container
+    let textContainerHeight = STTDiv.offsetHeight;
+
+    // Calcul de la hauteur de l'élément scrolling-text
+    let scrollingTextHeight = ScrollSTTDiv.offsetHeight;
+
+    var dureeSTT = subtitle.endTime - subtitle.startTime ;
+    var currentTimeSTT = currentTime - subtitle.startTime;
+
+    //infoDivH.textContent = "Durée totale: " + convertTimeToTimeH(totalDuration) + "s ==> " + " scrollHeight : " + scrollingTextHeight + " -  textHeight : " + textContainerHeight 
+               
+    timingDivH.textContent = "Position: " + (posSTT+1) + "/" + subtitlesLength + " - [" + subtitle.startTimeH  + " --> " + subtitle.endTimeH + "] - [" + convertTimeToTimeH(currentTime) + "] - durée STT: " + convertTimeToTimeH(dureeSTT) + " - [" + convertTimeToTimeH(currentTimeSTT) + "] " ;
+}
+function showInfosBts() {
+    showInfosBtsPolice();
+    //showInfosBtsOthers();
+}
+function showInfosBtsPolice() {
+    var currentFontSize = window.getComputedStyle(ScrollSTTDiv, null).getPropertyValue('font-size');
+    var fontSizeValue = parseFloat(currentFontSize);
+    var tailleTxt = document.getElementById('police');
+    tailleTxt.textContent = 'taille de la police : ' + fontSizeValue + 'px';
+}
+function showInfosBtsOthers() {
+    var vitesseTxt = document.getElementById('vitesse');
+    var hauteurTxt = document.getElementById('hauteur');
+    var largeurTxt = document.getElementById('largeur');
+    let textContainerHeight = ScrollSTTDiv.offsetHeight;   // Largeur effective de scrollSTT
+    let textContainerWidth = ScrollSTTDiv.offsetWidth;     // Hauteur effective de scrollSTT
+    var windowWidth = window.innerWidth;                // Largeur de la fenêtre du navigateur
+    var windowHeight = window.innerHeight;              // Hauteur de la fenêtre du navigateur
+    var widthPercentage = Math.round((textContainerWidth / windowWidth) * 100); // Calcul de la largeur en pourcentage
+    var heightPercentage = Math.round((textContainerHeight / windowHeight) * 100); // Calcul de la hauteur en pourcentage
+
+    hauteurTxt.textContent = 'hauteur de la zone STT = ' + heightPercentage + '%';
+    largeurTxt.textContent = 'largeur de la zone STT = ' + widthPercentage + '%';
+}
+function checkAndAjustIfNeed() {
+    // Calcul de la hauteur de l'élément text-container
+    let textContainerHeight = STTDiv.offsetHeight;
+
+    // Calcul de la hauteur de l'élément scrolling-text
+    let scrollingTextHeight = ScrollSTTDiv.offsetHeight;
+
+    if (textContainerHeight => scrollingTextHeight) {
+        ScrollSTTDiv.style.height = textContainerHeight + 'px';
+    }
+}
+// ==================================================================================
+// Gestion des events boutons
+function cacherInfos(action) {
+    if(document.getElementById("infoSTTH").style.color == "white") {
+        document.getElementById("infoSTTH").style.color = "black";
+        document.getElementById("timingSTTH").style.color = "black";
+        document.getElementById("idshowinfos").textContent = "afficher infos";
+
+    } else {
+        document.getElementById("infoSTTH").style.color = "white";
+        document.getElementById("timingSTTH").style.color = "white";
+        document.getElementById("idshowinfos").textContent = "cacher infos";
+    }
+}
+function changeFontSize(action) {
+    var currentFontSize = window.getComputedStyle(ScrollSTTDiv, null).getPropertyValue('font-size');
+    var fontSizeValue = parseFloat(currentFontSize);
+
+    if (action === 'increase') {
+        fontSizeValue += 2; // Augmenter la taille de 2 pixels (ajustez selon vos besoins)
+            ScrollSTTDiv.style.fontSize = fontSizeValue + 'px';
+
+    } else if (action === 'decrease') {
+        fontSizeValue -= 2; // Diminuer la taille de 2 pixels (ajustez selon vos besoins)
+            ScrollSTTDiv.style.fontSize = fontSizeValue + 'px';
+    }
+
+    if (action === 'verysmall') {
+        adjustTextSize(POLICE_VERY_SMALL); 
+    } else if (action === 'small') {
+        adjustTextSize(POLICE_SMALL); 
+    } else if (action === 'medium') {
+        adjustTextSize(POLICE_MEDIUM); 
+    } else if (action === 'big') {
+        adjustTextSize(POLICE_BIG); // 
+    } else if (action === 'verybig') {
+        adjustTextSize(POLICE_VERY_BIG); // 
+    }
+    checkAndAjustIfNeed();
+    showInfosBts();
+}
+
+function adjustTextSize(policeCase) {
+    const screenWidth = window.innerWidth;
+
+    // Calculer une nouvelle taille de police basée sur la largeur de l'écran
+    const newSize = Math.ceil((screenWidth / 100) * policeCase); 
+
+   // document.getElementById('body').style.fontSize = newSize + 'px';
+    ScrollSTTDiv.style.fontSize = newSize + 'px';
+}
+
+// Ajuster la taille du texte lors du chargement de la page
+window.addEventListener('load', changeFontSize(POLICE_MEDIUM));
+// Ajuster la taille du texte lorsque la fenêtre est redimensionnée
+window.addEventListener('resize', changeFontSize(POLICE_MEDIUM));
+
+function adjustHeight(action) {
+    var currentHeight = parseFloat(ScrollSTTDiv.offsetHeight);
+    if (action === 'increase') {
+        currentHeight += 20; // Augmenter la hauteur de 20px (ajustez selon vos besoins)
+    } else if (action === 'decrease') {
+        currentHeight -= 20; // Diminuer la hauteur de 20px (ajustez selon vos besoins)
+    }
+    ScrollSTTDiv.style.height = currentHeight + 'px';
+    console.log("scrollSTT.offsetHeight: "+ScrollSTTDiv.offsetHeight)
+    console.log("scrollSTT.style.height: "+ScrollSTTDiv.style.height)
+    showInfosBts();
+}
+
+function adjustWidth(action) {
+    var currentWidth = parseFloat(ScrollSTTDiv.offsetWidth);
+    if (action === 'increase') {
+        currentWidth += 20; // Augmenter la hauteur de 20px (ajustez selon vos besoins)
+    } else if (action === 'decrease') {
+        currentWidth -= 20; // Diminuer la hauteur de 20px (ajustez selon vos besoins)
+    }
+    ScrollSTTDiv.style.width = currentWidth  + 'px';
+    console.log("scrollSTT.offsetWidth: "+ScrollSTTDiv.offsetWidth)
+    console.log("scrollSTT.style.width: "+ScrollSTTDiv.style.width)
+    showInfosBts();
+}
+
+function cacherAfficher() {
+    //console.log("Fonction toggleBlackMode appelée.");
+
+    // Récupérer les éléments à modifier
+    var elementsToToggle = document.querySelectorAll('#STT, #scrollSTT');
+    console.log("Fonction toggleBlackMode appelée. Nombre d'éléments à basculer :", elementsToToggle.length);
+
+    // Parcourir chaque élément et basculer la classe 'all-black'
+    elementsToToggle.forEach(function(element) {
+        if (element.classList.contains('all-black')) {
+           // console.log("Suppression de la classe 'all-black' de l'élément :", element.id);
+            element.classList.remove('all-black');
+            document.getElementById("idshowstt").textContent = "cacher stt";
+
+        } else {
+            //console.log("Ajout de la classe 'all-black' à l'élément :", element.id);
+            element.classList.add('all-black');
+            document.getElementById("idshowstt").textContent = "afficher stt";
+
+        }
+    });
+}
+
+const colorSelect = document.getElementById('colorSelect');cadreSelect
+colorSelect.addEventListener('change', () => {
+  const colors = {
+    1: { text: 'white', background: 'black' },
+    3: { text: 'white', background: 'grey' },
+    4: { text: 'white', background: 'dimgrey' },
+    2: { text: 'black', background: 'lightgrey' },
+    5: { text: 'black', background: 'gainsboro' },
+    6: { text: 'black', background: 'silver' }
+  };
+  const selectedColor = colors[colorSelect.value];
+  STTDiv.style.backgroundColor = selectedColor.background;
+  STTDiv.style.color = selectedColor.text;
+});
+const borderSelect = document.getElementById('cadreSelect');cadreSelect
+borderSelect.addEventListener('change', () => {
+  const borders = {
+    1: 'black',
+    2: 'white',
+    3: 'grey'
+  };
+  const selectedBorder = borders[borderSelect.value];
+  console.log("div:" + ScrollSTTDiv.style.borderColor)
+  console.log("choix:" + borderSelect.value)
+  ScrollSTTDiv.style.borderColor = selectedBorder;
+    console.log("div:"+ ScrollSTTDiv.style.borderColor)
+
+});
+</script>
+</body>
+</html>
