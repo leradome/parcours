@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Votre titre</title>
+  <link rel="stylesheet" href="CodesCouleurs.css">
+  <style>
+    body {
+      background-color: black; /* Définit le fond de la page en noir */
+      margin: 0; /* Supprime les marges par défaut du corps */
+      padding: 0; /* Supprime le rembourrage par défaut du corps */
+      font-size: 16px; /* Taille de la police par défaut */
+    }
+    video {
+      height: 100vh; /* Hauteur de la vidéo à 100% de la hauteur de la fenêtre */
+      width: 100%; /* Largeur de la vidéo à 100% de la largeur de la fenêtre */
+      object-fit: cover; /* Assure que la vidéo couvre entièrement le conteneur */
+    }
+    ::cue {
+      font-size: 48px; /* Taille de la police pour les sous-titres */
+    }
+  </style>
+</head>
+<body>
+  <video controls autoplay fullscreen src="https://checksub-video-asset.s3.eu-west-1.amazonaws.com/user/123250/exportations/757f3403-4419-417c-9fbf-42c44b3738b3/274202/noir24min480.mp4">
+    <track default src="vtt/FR_noir24min480_CheckSub.vtt" kind="subtitles" srclang="fr" label="French" />
+  </video>
+
+    <script>
+
+    // Au chargement de la page
+    window.onload = function() {
+      const savedNumber = localStorage.getItem('selectedNumber');
+      if (savedNumber) {
+        // Ajouter la taille de la police au contenu du fichier VTT
+        const style = document.createElement('style');
+        style.innerHTML = `::cue { font-size: ${savedNumber}px; }`;
+        document.head.appendChild(style);
+      }
+    };
+  </script>
+</body>
+</html>

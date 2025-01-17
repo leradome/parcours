@@ -1,0 +1,208 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Musée des Télécoms</title>
+    <!-- Copyright © 2014 Monotype Imaging Inc. All rights reserved -->
+    <link href="https://cdn.jsdelivr.net/npm/boosted@5.3.3/dist/css/orange-helvetica.min.css" rel="stylesheet" integrity="sha384-A0Qk1uKfS1i83/YuU13i2nx5pk79PkIfNFOVzTcjCMPGKIDj9Lqx9lJmV7cdBVQZ" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/boosted@5.3.3/dist/css/boosted.min.css" rel="stylesheet" integrity="sha384-laZ3JUZ5Ln2YqhfBvadDpNyBo7w5qmWaRnnXuRwNhJeTEFuSdGbzl4ZGHAEnTozR" crossorigin="anonymous">
+    <!-- <link href="Style/accueil2.css" rel="stylesheet"> -->
+<style>
+.btn-primary.active {
+    background-color: #000 !important;
+    border-color: #000 !important;
+    color: #fff !important;
+    font-size: 1.25rem !important; /* Agrandissement du texte */
+    font-weight: bold !important; /* Texte en gras pour plus d'emphase */
+    transform: scale(1.05) !important; /* Légère augmentation de la taille du bouton */
+    transition: all 0.3s ease !important; /* Animation fluide */
+}
+
+.btn-primary {
+    transition: all 0.3s ease; /* Animation fluide pour tous les boutons */
+}
+</style>
+
+
+  </head>
+  <body>
+  <script>
+    var someParams = "";
+
+    window.onload = function() {
+      // 1. Récupérer l'URL actuelle
+      let url = new URL(window.location.href);
+
+      // 2. Récupérer les paramètres de l'URL
+      let params = new URLSearchParams(url.search);
+
+      // 3. Extraire la valeur de la clé "key"
+      let testKey = params.get('test'); 
+      let confKey = params.get('conf'); 
+      let coulKey = params.get('coul'); 
+      let helpKey = params.get('help'); 
+      let demoKey = params.get('demo'); 
+      let introKey = params.get('intro'); 
+
+
+      if(testKey!=null){
+        document.getElementById("BTNTests").style.display = "block";
+      }
+      if(confKey!=null){
+        document.getElementById("BTNConf").style.display = "block";
+      }
+      if(demoKey!=null){
+        document.getElementById("demoDiv").style.display = "block";
+      }      
+      addParam(confKey,"coul");
+      addParam(demoKey,"demo");
+      addParam(introKey,"intro");// provisoire, doit disparaitre et mettre à la place un scénario de début avant de lancer le parcours
+      if(helpKey!=null){
+        document.getElementById("helpDiv").style.display = "block";
+      }
+    }
+
+    // Fonction pour ajouter des paramètres dans l'URL
+    function addParam(keyParam, valueParam) {
+      if (keyParam != null) { 
+        if (someParams == "") {
+          someParams = "?";  // Commence avec un "?" si c'est vide
+        } else {
+          someParams += "&"; // Sinon on ajoute "&"
+        }
+        someParams += valueParam + "=" + keyParam; // Ajoute le paramètre à l'URL
+      }
+    }
+
+
+    // explications :
+    // help : affiche la liste des paramètres
+    // test : affiche le bouton de test dans la page d'accueil
+    // conf : affiche le bouton de configuration dans la page d'acceuil
+    // coul : affiche les boutons de choix des couleurs
+    // demo : pour les demos (script de demo, boucle infinie)
+
+     // Fonction pour ajouter debPos et endPos à l'URL
+      function addDebEndPos(salle, debPos, endPos) {
+        someParams = "?salle="+salle+"&debPos=" + debPos + "&endPos=" + endPos; // Ajoute les positions
+      }
+
+function openSTT(salle) {
+  if (salle == 0) {      addDebEndPos(0, 0, 0); }
+  else if (salle == 1) { addDebEndPos(1, 1, 65); }
+  else if (salle == 2) { addDebEndPos(2, 66, 125); }
+  else if (salle == 3) { addDebEndPos(3, 126, 177); }
+  return 'scriptNormalSTTFS.html'+someParams;
+}
+
+    // Fonction pour afficher le container STT et masquer le container LSF, et vice versa
+ function toggleContainers(mode) {
+    // Masquer les deux containers
+    document.getElementById("sttContainer").style.display = "none";
+    document.getElementById("lsfContainer").style.display = "none";
+    
+    // Réinitialiser tous les boutons
+    document.querySelectorAll('.mode-select').forEach(btn => {
+        btn.classList.remove('active');
+    });
+    
+    // Activer le bouton cliqué
+    if (mode === "STT") {
+        document.getElementById("sttContainer").style.display = "block";
+        document.getElementById("btnSTT").classList.add('active');
+    } else if (mode === "LSF") {
+        document.getElementById("lsfContainer").style.display = "block";
+        document.getElementById("btnLSF").classList.add('active');
+    }
+}
+
+
+  </script>
+
+      <br><br>
+    <center><h1>Musée des Télécoms</h1><h2>Visite du Parcours Immersif <br>sous le Radôme</h2></center>
+        <br><br>
+        <center><h2 style="color: #f16e00">- EXPERIMENTATION -</h2></center><br>
+<br><br>
+
+
+  <!-- Boutons pour afficher/masquer les containers -->
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-6">
+        <div class="border border-2 rounded p-4 mb-4">
+          <div class="d-grid">
+            <button id="btnSTT" class="btn btn-primary btn-lg mb-3 mode-select" type="button" onclick="toggleContainers('STT');"> 
+                Visite en mode STT
+            </button>
+            <button id="btnLSF" class="btn btn-primary btn-lg mode-select" type="button" onclick="toggleContainers('LSF');">
+                Visite en mode LSF
+            </button>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+<!-- 
+salle 1 : deb=00:00 fin=07:34 deb/fin posSTT 1 - 65
+salle 2 : deb=07:34 fin=10:45 deb/fin posSTT 66 - 125
+salle 3 : deb=10:45 fin=07:34 deb/fin posSTT 126 - 177
+-->
+  <div id="sttContainer" class="container" style="display:none;">
+    <center><h2 style="color: #f16e00">Lancer la visite en mode STT</h2></center>
+
+  <div class="row justify-content-center">
+    <div class="col-6">
+      <div class="border border-2 rounded p-4 mb-4">
+        <div class="d-grid">
+          <button class="btn btn-primary btn-lg mb-3" type="button" onclick="location.href=openSTT('0');"> 
+            entrée devant le portique
+          </button>
+          <button class="btn btn-primary btn-lg mb-3" type="button" onclick="location.href=openSTT('1');"> 
+            salle 1
+          </button>
+          <button class="btn btn-primary btn-lg mb-3" type="button" onclick="location.href=openSTT('2');">
+            salle 2
+          </button>
+          <button class="btn btn-primary btn-lg" type="button" onclick="location.href=openSTT('3');">
+            salle 3
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+  <div id="lsfContainer" class="container" style="display:none;">
+    <center><h2 style="color: #f16e00">Lancer la visite en mode LSF</h2></center>
+
+  <div class="row justify-content-center">
+    <div class="col-6">
+      <div class="border border-2 rounded p-4 mb-4">
+        <div class="d-grid">
+          <button class="btn btn-primary btn-lg mb-3" type="button" onclick="location.href='scriptNormalSTTFS.html'+someParams">
+            entrée devant le portique
+          </button>          
+          <button class="btn btn-primary btn-lg mb-3" type="button" onclick="location.href='scriptNormalSTTFS.html'+someParams">
+            salle 1
+          </button>
+          <button class="btn btn-primary btn-lg mb-3" type="button" onclick="location.href='scriptNormalSTTFS.html'+someParams">
+            salle 2
+          </button>
+          <button class="btn btn-primary btn-lg" type="button" onclick="location.href='scriptNormalSTTFS.html'+someParams">
+            salle 3
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+  
+    <script src="https://cdn.jsdelivr.net/npm/boosted@5.3.3/dist/js/boosted.bundle.min.js" integrity="sha384-3RoJImQ+Yz4jAyP6xW29kJhqJOE3rdjuu9wkNycjCuDnGAtC/crm79mLcwj1w2o/" crossorigin="anonymous"></script>
+  </body>
+</html>

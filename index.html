@@ -11,44 +11,95 @@
 
   </head>
   <body>
-    
-      <br><br><br>
+  <script>
+          var someParams = "";
+
+    window.onload = function() {
+      // 1. Récupérer l'URL actuelle
+      let url = new URL(window.location.href);
+
+      // 2. Récupérer les paramètres de l'URL
+      let params = new URLSearchParams(url.search);
+
+      // 3. Extraire la valeur de la clé "key"
+      let testKey = params.get('test'); 
+      let confKey = params.get('conf'); 
+      let coulKey = params.get('coul'); 
+      let helpKey = params.get('help'); 
+      let demoKey = params.get('demo'); 
+      let introKey = params.get('intro'); 
+
+      var nbParams = 0;
+
+      if(testKey!=null){
+        document.getElementById("BTNTests").style.display = "block";
+      }
+      if(confKey!=null){
+        document.getElementById("BTNConf").style.display = "block";
+      }
+      if(confKey!=null){
+        nbParams++;
+        if(nbParams==1) {someParams="?"}
+        else            {someParams="&"}
+        someParams=someParams+"coul"
+      }
+      if(demoKey!=null){
+        nbParams++;
+        if(nbParams==1) {someParams="?"}
+        else            {someParams="&"}
+        someParams=someParams+"demo"
+        document.getElementById("demoDiv").style.display = "block";
+      }      
+      if(introKey!=null){ // provisoire, doit disparaitre et mettre à la place un scénario de début avant de lancer le parcours
+        nbParams++;
+        if(nbParams==1) {someParams="?"}
+        else            {someParams="&"}
+        someParams=someParams+"intro"
+      }
+      if(helpKey!=null){
+        document.getElementById("helpDiv").style.display = "block";
+      }
+    }
+
+    // explications :
+    // help : affiche la liste des paramètres
+    // test : affiche le bouton de test dans la page d'accueil
+    // conf : affiche le bouton de configuration dans la page d'acceuil
+    // coul : affiche les boutons de choix des couleurs
+    // demo : pour les demos (script de demo, boucle infinie)
+
+
+  </script>
+
+      <br><br>
     <center><h1>Musée des Télécoms</h1><h2>Visite du Parcours Immersif <br>sous le Radôme</h2></center>
         <br><br><br><br>
 
 
-<center><h2 style="color: #f16e00">Lancer la visite</h2></center>
-<!-- <center><p style="color: #f16e00">Lancer la visite</p></center> -->
-<!-- <br><br>ods-orange-100 -->
-
+<center><h2 style="color: #f16e00">Lancer la visite <div id="demoDiv" style="display: none;"><center> DEMO - DEMO - DEMO</center></div></h2></center>
 <div class="d-grid gap-2 col-6 mx-auto">
-  <button class="btn btn-primary btn-lg" type="button" onclick="location.href='scriptNormalSTTFS.html'">en <br>mode STT  </button><br><br>
-  <button class="btn btn-primary btn-lg" type="button" onclick="location.href='MDTVOD2.mp4'">avec <br>un avatar LSF</button>
+  <button class="btn btn-primary btn-lg" type="button" onclick="location.href='scriptNormalSTTFS.html'+someParams">en <br>mode STT  </button><br><br>
+  <button class="btn btn-primary btn-lg" type="button" onclick="location.href='testIves.html'">avec <br>un avatar LSF</button>
 </div>
         <br><br><br><br>        <br><br>
 
 <div class="d-grid gap-2 col-4 mx-auto">
-  <button class="btn btn-secondary" type="button" onclick="location.href='params.html'"> Configuration</button><br><hr><br>
+  <button id="BTNConf" class="btn btn-secondary" type="button" style="display: none;" onclick="location.href='params.html'"> Configuration</button><br><br>
 </div>
 <br>
-<br><br><br><br> 
 <div class="d-grid gap-2 col-4 mx-auto">
-  <button class="btn btn-secondary" type="button" onclick="location.href='test.html'"> Tests internes</button>
+  <button id="BTNTests" class="btn btn-secondary" type="button" style="display: none;" onclick="location.href='test.html'"> Tests internes</button>
 </div>
-<!-- <div class="d-grid gap-2 d-md-block">
-  <button id="btnFS" class="btn btn-secondary" type="button" onclick="FullScreenAsked()">passer <br> en plein écran</button>
-</div>
-<script>
- function FullScreenAsked(action) {
-        var bodyElement = document.body;
-        requestFullscreen(bodyElement);
-        document.getElementById("btnFS").style.display = "none";
 
-  }
-</script>
-<script src="scripts/fullScreen.js">// gestion d'affichage plein écran/écran normal</script> -->
-
+<div id=helpDiv style="display: none;">
+  Liste des options : <br>
+    help : affiche la liste des paramètres<br>
+    test : affiche le bouton de test dans la page d'accueil<br>
+    conf : affiche le bouton de configuration dans la page d'acceuil<br>
+    coul : affiche les boutons de choix des couleurs<br>
+    demo : pour les demos (script de demo, boucle infinie)<br>
+</div>    
     <script src="https://cdn.jsdelivr.net/npm/boosted@5.3.3/dist/js/boosted.bundle.min.js" integrity="sha384-3RoJImQ+Yz4jAyP6xW29kJhqJOE3rdjuu9wkNycjCuDnGAtC/crm79mLcwj1w2o/" crossorigin="anonymous"></script>
   </body>
 </html>
- 
+ <!-- ajout parametres fin url pour afficher/cacher boutons. modif titre -->

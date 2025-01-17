@@ -1,0 +1,864 @@
+1
+00:00:00,000 --> 00:00:37,000
+(Bruits de pas,
+sonnerie de téléphone, 
+bruits ambiants, 
+machine à écrire...)
+
+2
+00:00:38,010 --> 00:00:44,010
+(Voix OFF Femme) 
+Bienvenue dans le Bureau d’études 
+du Râdome.
+
+
+3
+00:00:45,010 --> 00:00:51,030
+Pour toute question, 
+adressez-vous à l’ingénieur présent.
+
+4
+00:00:52,040 --> 00:01:02,000
+(Bruits de fond, machine à écrire)
+
+5
+00:01:03,020 --> 00:01:06,350
+Bonjour. 
+
+6
+00:01:13,000 --> 00:01:19,000
+Bienvenue dans le bureau d’étude 
+où une partie de ce projet 
+hors norme a été conçue.
+
+7
+00:01:19,000 --> 00:01:22,500
+Je vous avoue que le moment 
+n’est pas le mieux choisi...
+
+8
+00:01:22,500 --> 00:01:26,000
+D’ici quelques minutes, 
+nous allons tenter d’établir,
+
+9
+00:01:26,000 --> 00:01:29,500
+pour la première fois 
+dans l’histoire,
+
+10
+00:01:29,500 --> 00:01:34,000
+une liaison télévisuelle 
+par satellite 
+entre deux continents.
+
+11
+00:01:34,000 --> 00:01:37,610
+Nous devons recevoir le signal 
+depuis les États-Unis
+
+12
+00:01:37,610 --> 00:01:42,570
+via le satellite Telstar 
+qui a été mis en orbite hier...
+
+13
+00:01:42,570 --> 00:01:47,620
+Cette grande boule blanche, 
+est un Radôme :
+
+14
+00:01:47,620 --> 00:01:52,620
+« RA » pour RADAR.
+« Dôme » pour dôme.
+
+15
+00:01:52,620 --> 00:01:57,560
+Il recouvre l’immense antenne que 
+vous verrez tout à l’heure,
+
+16
+00:01:57,560 --> 00:02:01,530
+pour la protéger des intempéries.
+
+17
+00:02:01,530 --> 00:02:07,510
+L’antenne, qu’on surnomme 
+« le cornet » ou « l'oreille », 
+à cause de son apparence,
+
+18
+00:02:07,510 --> 00:02:12,340
+est censée recevoir les signaux 
+envoyés par les Américains.
+
+19
+00:02:12,340 --> 00:02:18,340
+Je dis « censée » 
+parce qu’on a fini la construction 
+il y a à peine trois jours…
+
+20
+00:02:18,340 --> 00:02:24,120
+Et on n’a pas encore pu vérifier 
+si tout marche bien…
+
+21
+00:02:24,130 --> 00:02:29,190
+(Sonnerie de téléphone)
+
+22
+00:02:29,190 --> 00:02:31,850
+Excusez-moi, je dois répondre.
+N’hésitez pas à être curieux,
+
+23
+00:02:31,850 --> 00:02:34,670
+à vous balader, à regarder 
+les documents qui trainent, 
+à utiliser les téléphones…
+
+24
+00:02:34,670 --> 00:02:37,280
+Vous trouverez plein de choses 
+super intéressantes.
+
+25
+00:02:37,280 --> 00:02:39,260
+Je reviens tout de suite.
+
+26
+00:02:39,260 --> 00:02:43,330
+(L'homme tourne le dos. 
+Bruits de machine à écrire.)
+
+27
+00:03:09,200 --> 00:03:14,330
+(Sonnerie de téléphone, 
+machines à écrire.)
+
+28
+00:03:22,200 --> 00:03:25,190
+(Bruits de pas.)
+
+29
+00:03:33,230 --> 00:03:38,490
+(Conversations, sonneries 
+de téléphone au loin, ou plus proche,
+machines à écrire.)
+
+30
+00:03:54,090 --> 00:03:57,240
+On vient de recevoir un télex :
+
+31
+00:03:57,240 --> 00:04:02,240
+le satellite TELSTAR 
+a dérivé de son orbite et 
+nous avons perdu son signal.
+
+32
+00:04:02,240 --> 00:04:07,290
+Les Américains sont 
+en train de nous envoyer 
+ses nouvelles coordonnées
+
+33
+00:04:07,290 --> 00:04:09,980
+pour qu’on puisse le retrouver.
+
+34
+00:04:09,980 --> 00:04:13,840
+Je ne vous cache pas 
+qu’on est un peu sous pression.
+
+35
+00:04:13,840 --> 00:04:16,510
+Si leurs calculs sont faux,
+
+36
+00:04:16,510 --> 00:04:20,970
+le 11 juillet 1962 
+ne sera pas la date 
+de la première transmission
+
+37
+00:04:20,970 --> 00:04:23,940
+par satellite entre deux continents,
+
+38
+00:04:23,940 --> 00:04:28,350
+mais celle du plus gros bide
+de l’histoire 
+des télécommunications.
+
+39
+00:04:28,350 --> 00:04:32,370
+En plus de ça, 
+on n’est pas les seuls sur le coup !
+
+40
+00:04:32,370 --> 00:04:37,080
+Une autre antenne se trouve 
+en Angleterre – à Goonhilly Downs –
+
+41
+00:04:37,080 --> 00:04:39,800
+et ils essaient aussi 
+de capter le signal...
+
+42
+00:04:39,800 --> 00:04:42,500
+C’est un peu la course entre nous,
+
+43
+00:04:42,500 --> 00:04:47,520
+mais il faut dire qu’on utilise 
+pas du tout les mêmes technologies.
+
+44
+00:04:47,520 --> 00:04:52,690
+Les Anglais utilisent 
+une antenne parabolique qu’ils ont 
+développé dans leur coin :
+
+45
+00:04:52,690 --> 00:04:55,020
+très audacieux, mais risqué.
+
+46
+00:04:55,020 --> 00:05:00,100
+Nous, on utilise 
+une technologie américaine 
+qui a déjà fait ses preuves :
+l’antenne à cornet.
+
+47
+00:05:00,100 --> 00:05:05,140
+Notre installation est 
+la copie conforme 
+de la station d’Andover 
+dans l’État du MAINE.
+
+48
+00:05:05,140 --> 00:05:07,060
+(Sonnerie de téléphone)
+
+49
+00:05:07,070 --> 00:05:09,010
+Excusez-moi, je reviens.
+
+50
+00:05:09,010 --> 00:05:14,270
+(Il décroche et tourne le dos
+Toujours mêmes bruits de fond)
+
+51
+00:06:16,040 --> 00:06:18,060
+(Il raccroche)
+
+52
+00:06:18,070 --> 00:06:21,740
+La grande difficulté, dans ce projet,
+
+53
+00:06:21,740 --> 00:06:27,600
+c’est que notre satellite 
+tourne constamment et 
+à très grande vitesse 
+autour de la terre…
+
+54
+00:06:27,600 --> 00:06:30,230
+Environ 24 000 Km/h
+
+55
+00:06:30,230 --> 00:06:35,730
+et ses antennes doivent être 
+parfaitement  alignées 
+pour capter les signaux
+
+56
+00:06:35,730 --> 00:06:38,280
+qu’on lui envoie...
+
+57
+00:06:38,280 --> 00:06:42,160
+Vous pouvez imaginer 
+la difficulté de l’opération…
+
+58
+00:06:42,160 --> 00:06:47,700
+D’autant que la durée 
+durant laquelle les antennes 
+américaines et européennes
+
+59
+00:06:47,700 --> 00:06:52,660
+voient simultanément le satellite 
+est très courte, à peine 20 mn.
+
+60
+00:06:52,660 --> 00:06:55,770
+Eh bien…, 
+si ça ne vous ennuie pas,
+
+61
+00:06:55,770 --> 00:07:00,780
+je vous invite à passer 
+dans la salle de contrôle, 
+juste à côté.
+
+62
+00:07:00,780 --> 00:07:05,340
+Nous devons nous réunir 
+avec mes collègues
+
+63
+00:07:05,340 --> 00:07:10,810
+pour vérifier les calculs 
+de la nouvelle trajectoire 
+de Telstar.
+
+64
+00:07:10,810 --> 00:07:14,590
+Merci beaucoup et à bientôt.
+
+65
+00:07:15,020 --> 00:07:19,340
+(Il se retourne 
+après avoir incité 
+à changer de pièce)
+
+66
+00:07:34,600 --> 00:07:39,760
+(Voix OFF Femme)
+Bienvenue 
+dans le centre de contrôle.
+
+67
+00:07:39,760 --> 00:07:44,740
+C’est ici que nos techniciens 
+vont contrôler la réception
+
+68
+00:07:44,740 --> 00:07:49,040
+des données du satellite Telstar.
+
+69
+00:07:49,040 --> 00:07:54,460
+Le lancement de la rotation 
+de l’antenne est imminent.
+
+70
+00:07:54,460 --> 00:07:59,960
+La première réception aura lieu 
+dans quelques minutes
+
+71
+00:07:59,970 --> 00:08:05,260
+(Des voix résonnent en anglais 
+dans des haut-parleurs)
+
+72
+00:08:05,900 --> 00:08:07,510
+(1er dialogue)
+
+73
+00:08:07,510 --> 00:08:09,000
+- Vous avez les nouvelles 
+coordonnées du satellite ?
+
+74
+00:08:10,000 --> 00:08:12,000
+- Pas encore, on attend que 
+les Américains les transmettent
+
+75
+00:08:13,000 --> 00:08:15,050
+- Et les Anglais, ils en sont où ?
+
+76
+00:08:15,050 --> 00:08:17,060
+- On sait pas du tout...
+
+77
+00:08:17,060 --> 00:08:19,000
+- J’espère qu’ils ne vont pas
+ nous passer devant…
+
+78
+00:08:21,960 --> 00:08:23,860
+(2ème dialogue)
+
+79
+00:08:24,960 --> 00:08:27,240
+-Can you get someone 
+to the amplifier please?
+
+80
+00:08:27,240 --> 00:08:29,560
+-Non, personne n’est 
+disponible pour l’instant.
+
+81
+00:08:29,570 --> 00:08:31,820
+-There are 190 of us 
+and we still lack people?
+
+82
+00:08:31,830 --> 00:08:33,720
+-Non, monsieur, on est 
+au maximum des effectifs.
+
+83
+00:08:33,720 --> 00:08:35,970
+Je vous envoie quelqu’un 
+dès qu’un poste se libère.
+
+84
+00:08:38,920 --> 00:08:40,280
+(3ème dialogue)
+
+85
+00:08:40,280 --> 00:08:41,900
+-Le Radôme tient le coup ?
+
+86
+00:08:41,900 --> 00:08:43,840
+-Pour l’instant oui : la température
+ intérieure est bonne.
+
+87
+00:08:43,840 --> 00:08:46,120
+-Ok, pression extérieure ?
+-4 millibars
+
+88
+00:08:46,120 --> 00:08:48,410
+-Parfait. Appelez-moi 
+à la moindre modulation,
+
+89
+00:08:48,410 --> 00:08:50,620
+s’il y a un jour où 
+il ne faut pas qu’il nous tombe
+
+90
+00:08:50,620 --> 00:08:53,120
+sur la tête, 
+c’est bien aujourd’hui !
+
+91
+00:08:54,400 --> 00:08:56,000
+(4ème dialogue)
+
+92
+00:08:56,000 --> 00:08:58,700
+-Est-ce qu’on peut envoyer 
+quelqu’un au maser s’il vous plait ?
+
+93
+00:08:58,700 --> 00:09:01,400
+-Non, monsieur, notre équipe 
+est déjà au complet.
+
+94
+00:09:01,400 --> 00:09:03,970
+-On est 190 à travailler ici et 
+y’a personne pour y aller ?
+
+95
+00:09:03,970 --> 00:09:06,250
+-Je vais faire mon maximum 
+pour trouver quelqu’un.
+
+96
+00:09:07,500 --> 00:09:09,290
+(Voix OFF Homme)
+-On a reçu
+
+97
+00:09:09,290 --> 00:09:12,280
+les nouvelles coordonnées 
+du satellite envoyé 
+par les Américains.
+
+98
+00:09:12,280 --> 00:09:14,510
+-Lancement de rotation 
+de l’antenne !
+
+99
+00:09:14,520 --> 00:09:17,510
+(Bruit mécanique de rotation)
+
+100
+00:09:17,520 --> 00:09:19,940
+-Rotation de l’antenne lancée !
+
+101
+00:09:28,250 --> 00:09:30,590
+(Arrêt bruit de rotation. 
+Sonnerie d’alerte se déclenche)
+
+102
+00:09:30,590 --> 00:09:32,010
+-L’antenne est immobilisée...
+
+103
+00:09:32,010 --> 00:09:34,260
+C’est quoi le problème là, 
+ça vient d’où ?
+
+104
+00:09:34,270 --> 00:09:36,590
+-Les rouages sont 
+complètement bloqués
+
+105
+00:09:36,590 --> 00:09:38,560
+-Ça peut venir du moteur
+
+106
+00:09:38,560 --> 00:09:40,820
+ou de quelque chose 
+de bloqué dans les rouages.
+
+107
+00:09:40,820 --> 00:09:43,400
+-On un problème 
+avec un tube électronique.
+
+108
+00:09:43,400 --> 00:09:45,770
+-Oui, oui nos équipes 
+sont dessus.
+
+109
+00:09:45,780 --> 00:09:48,770
+-Le moteur principal a lâché !!!
+
+110
+00:09:48,780 --> 00:09:51,770
+Je répète, 
+le moteur principal a lâché.
+
+111
+00:09:51,780 --> 00:09:54,770
+-Il faut passer 
+sur le moteur secondaire !!!
+
+112
+00:09:54,780 --> 00:09:57,770
+Il faut que quelqu’un actionne 
+la procédure de lancement.
+
+113
+00:09:57,780 --> 00:10:01,290
+-Il faut appuyer 
+sur le bouton clignotant 
+à côté de l’écran de contrôle.
+
+114
+00:10:01,290 --> 00:10:03,120
+(Arrêt de la sonnerie d’alerte)
+
+115
+00:10:03,120 --> 00:10:05,010
+(On entend à nouveau 
+les bruits de rotation)
+
+116
+00:10:05,020 --> 00:10:06,720
+-C’est bon, 
+On a déclenché
+
+117
+00:10:06,720 --> 00:10:09,210
+le moteur secondaire 
+depuis la salle des machines.
+
+118
+00:10:09,210 --> 00:10:12,200
+-Moteur secondaire lancé !
+
+119
+00:10:12,200 --> 00:10:16,180
+-Est-ce qu’on a encore le temps 
+de capter le signal du satellite ?
+
+120
+00:10:16,180 --> 00:10:19,170
+-Je ne sais pas du tout...
+
+121
+00:10:20,050 --> 00:10:22,500
+(Arrêt bruit de rotation)
+
+122
+00:10:22,500 --> 00:10:24,800
+-Mesdames, Messieurs,
+
+123
+00:10:25,000 --> 00:10:28,000
+merci de vous rendre 
+au centre de réception vidéo !
+
+124
+00:10:33,000 --> 00:10:39,830
+(La porte s’ouvre. Musique 
+d’ambiance douce, envoutante.)
+
+125
+00:10:39,830 --> 00:10:43,790
+(Son ondulation nous porte et nous 
+fait voyager vers l’espace l’infini.)
+
+126
+00:11:08,000 --> 00:11:11,000
+(Voix d'homme)
+Mesdames, Messieurs,
+
+127
+00:11:11,000 --> 00:11:14,000
+le Ministère 
+des Postes et Télécommunications 
+est heureux de vous accueillir
+
+128
+00:11:14,010 --> 00:11:17,000
+à la station télécommunication 
+spatiale de Pleumeur-Bodou.
+
+129
+00:11:17,010 --> 00:11:20,000
+(Douce musique 
+d’ambiance envoutante. )
+
+130
+00:13:02,030 --> 00:13:03,360
+(Voix OFF Femme)
+
+131
+00:13:03,360 --> 00:13:10,280
+Veuillez-vous diriger
+vers le centre de visionnage.
+
+132
+00:14:06,900 --> 00:14:11,130
+(Voix au loin 
+d’une transmission qui résonne)
+
+133
+00:14:42,950 --> 00:14:46,270
+(La musique d’ambiance s’arrête)
+
+134
+00:14:46,280 --> 00:14:47,730
+(Voix OFF Homme)
+
+135
+00:14:47,730 --> 00:14:49,650
+-Est-ce qu’on reçoit le signal ?
+
+136
+00:14:49,650 --> 00:14:51,490
+-rien pour l’instant.
+
+137
+00:14:51,490 --> 00:14:54,480
+-Et les Anglais, 
+ils ont réussi à l’intercepter ?
+
+138
+00:14:54,480 --> 00:14:57,470
+-Non plus
+-Pourtant le satellite est bien là ?
+
+139
+00:14:57,470 --> 00:15:00,050
+-Oui monsieur… 
+Mais on ne reçoit rien.
+
+140
+00:15:00,050 --> 00:15:02,200
+-Est-ce que quelqu’un 
+a quelque chose ?
+
+141
+00:15:02,200 --> 00:15:04,280
+-Non monsieur, 
+rien pour le moment.
+
+142
+00:15:04,280 --> 00:15:06,560
+-Allez, allez, allez… 
+allez…
+
+143
+00:15:06,560 --> 00:15:09,550
+-On devrait l’avoir en ligne 
+de mire d’ici quelques secondes.
+
+144
+00:15:09,550 --> 00:15:12,300
+-Allez mon p’tit satellite, 
+ne nous lâche pas maintenant…
+come on…
+
+145
+00:15:12,300 --> 00:15:14,450
+-Allez allez, allez vas-y…
+
+146
+00:15:14,450 --> 00:15:17,440
+-Ca va marcher, 
+on va le capter ce signal…
+
+147
+00:15:17,440 --> 00:15:19,070
+-Oh Jesus…
+
+148
+00:15:19,640 --> 00:15:21,740
+(Musique d’ambiance claire, 
+douce et lumineuse.)
+
+149
+00:15:21,740 --> 00:15:23,690
+(Des images sont transmises 
+sur les écrans.)
+
+150
+00:15:23,700 --> 00:15:24,810
+(Voix OFF Homme)
+
+151
+00:15:24,810 --> 00:15:26,520
+-Hey oh les gars, 
+on a quelque chose !
+
+152
+00:15:26,520 --> 00:15:28,460
+-On a une image !
+
+153
+00:15:28,470 --> 00:15:31,690
+(Voix OFF Femme) 
+-On est en direct 
+avec les Etats-Unis !
+
+154
+00:15:31,690 --> 00:15:34,070
+(Applaudissements)
+
+155
+00:15:34,070 --> 00:15:36,400
+-Mesdames, messieurs,
+
+156
+00:15:36,400 --> 00:15:39,560
+nous regardons 
+les 1ères images retransmises 
+en direct par satellite !
+
+157
+00:15:39,560 --> 00:15:42,550
+-Félicitation les gars, 
+on l’a fait ! C’est génial !
+
+158
+00:15:42,550 --> 00:15:45,540
+-Ca marche !
+-Oh ça marche, ça marche !
+
+159
+00:15:45,540 --> 00:15:46,860
+-Bravo !
+
+160
+00:15:46,860 --> 00:15:49,960
+-Je vous l’avais dit 
+qu’on y arriverait ! Quel succès !
+
+161
+00:15:49,960 --> 00:15:52,720
+-Ca marche !
+Congratulation ! congratulation !
+
+162
+00:15:52,720 --> 00:15:56,030
+-Oh c’est génial !
+-Ca marche !
+-C’est une première mondiale !!!
+
+163
+00:15:56,030 --> 00:15:58,280
+-Allez les gars, 
+on ne va pas rater ça,
+
+164
+00:15:58,280 --> 00:16:01,180
+Il faut immortaliser ce moment.
+Tout le monde en place pour la photo.
+
+165
+00:16:01,180 --> 00:16:04,170
+Vous aussi… 
+Mettez-vous bien devant l’appareil.
+
+166
+00:16:04,170 --> 00:16:07,460
+-Tiens, viens prêt de moi.
+-Oui resserrez-vous sur la gauche.
+
+167
+00:16:07,460 --> 00:16:09,910
+-Viens là.
+-Tout le monde est prêt.
+
+168
+00:16:09,910 --> 00:16:12,900
+-Ouais, comme ça là ?
+-Souriez...  Trois ? deux, un …
+
+169
+00:16:12,900 --> 00:16:15,370
+(bruit d’appareil photo)
+(Flash lumineux de la prise de photo)
+
+170
+00:16:15,370 --> 00:16:18,360
+-C’est, c’est incroyable 
+ce qu’il se passe…
+
+171
+00:16:18,360 --> 00:16:21,990
+Non mais regarde ce qu’on a fait ! 
+C’est une première dans l’histoire.
+
+172
+00:16:21,990 --> 00:16:25,210
+Tu imagines le potentiel 
+que ça représente !
+
+173
+00:16:25,210 --> 00:16:28,200
+Ce qu’on pourra faire avec 
+dans quelques années.
+
+174
+00:16:28,200 --> 00:16:30,490
+J’ose à peine imaginer…
+
+175
+00:16:40,970 --> 00:16:45,000
+(Musique d’ambiance de plus en plus 
+majestueuse, et dynamique)
+
+176
+00:16:45,010 --> 00:16:51,120
+Sous la voute du dôme, 
+des images défilent 
+au rythme du temps et de l’histoire…

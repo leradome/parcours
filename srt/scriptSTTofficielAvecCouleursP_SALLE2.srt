@@ -1,0 +1,284 @@
+66
+00:07:34,500 --> 00:07:39,500
+<p class="comment">(Voix OFF Femme)</p>
+Bienvenue 
+dans le centre de contrôle.
+
+67
+00:07:40,000 --> 00:07:44,000
+C’est ici que nos techniciens 
+vont contrôler la réception
+
+68
+00:07:44,500 --> 00:07:48,500
+des données du satellite Telstar.
+
+69
+00:07:49,000 --> 00:07:54,000
+Le lancement de la rotation 
+de l’antenne est imminent.
+
+70
+00:07:54,500 --> 00:07:59,500
+La première réception aura lieu 
+dans quelques minutes
+
+71
+00:08:00,000 --> 00:08:05,000
+<p class="comment">(Des voix résonnent en anglais 
+dans des haut-parleurs)</p>
+
+72
+00:08:05,500 --> 00:08:07,000
+<p class="comment">(1er dialogue)</p>
+
+73
+00:08:07,500 --> 00:08:09,500
+- Vous avez les nouvelles 
+coordonnées du satellite ?
+
+74
+00:08:10,000 --> 00:08:12,000
+- Pas encore, on attend que 
+les Américains les transmettent
+
+75
+00:08:12,500 --> 00:08:14,500
+- Et les Anglais, ils en sont où ?
+
+76
+00:08:15,000 --> 00:08:17,000
+- On sait pas du tout...
+
+77
+00:08:17,500 --> 00:08:19,500
+- J’espère qu’ils ne vont pas
+ nous passer devant…
+
+78
+00:08:22,000 --> 00:08:24,000
+<p class="comment">(2ème dialogue)</p>
+
+79
+00:08:24,500 --> 00:08:26,500
+<p class="stranger">-Can you get someone 
+to the amplifier please?</p>
+
+80
+00:08:27,000 --> 00:08:29,000
+-Non, personne n’est 
+disponible pour l’instant.
+
+81
+00:08:29,500 --> 00:08:31,500
+<p class="stranger">-There are 190 of us 
+and we still lack people?</p>
+
+82
+00:08:32,000 --> 00:08:34,000
+-Non, monsieur, on est 
+au maximum des effectifs.
+
+83
+00:08:34,500 --> 00:08:36,500
+Je vous envoie quelqu’un 
+dès qu’un poste se libère.
+
+84
+00:08:38,000 --> 00:08:39,500
+<p class="comment">(3ème dialogue)</p>
+
+85
+00:08:40,000 --> 00:08:41,500
+-Le Radôme tient le coup ?
+
+86
+00:08:42,000 --> 00:08:43,500
+-Pour l’instant oui : la température
+ intérieure est bonne.
+
+87
+00:08:44,000 --> 00:08:46,000
+<p>-Ok, pression extérieure ?</p>
+<p>-4 millibars</p>
+
+88
+00:08:46,500 --> 00:08:48,000
+-Parfait. Appelez-moi 
+à la moindre modulation,
+
+89
+00:08:48,500 --> 00:08:50,000
+s’il y a un jour où 
+il ne faut pas qu’il nous tombe
+
+90
+00:08:50,500 --> 00:08:53,000
+sur la tête, 
+c’est bien aujourd’hui !
+
+91
+00:08:54,000 --> 00:08:55,500
+<p class="comment">(4ème dialogue)</p>
+
+92
+00:08:56,000 --> 00:08:58,500
+-Est-ce qu’on peut envoyer 
+quelqu’un au maser s’il vous plait ?
+
+93
+00:08:59,000 --> 00:09:01,000
+-Non, monsieur, notre équipe 
+est déjà au complet.
+
+94
+00:09:01,500 --> 00:09:03,500
+-On est 190 à travailler ici et 
+y’a personne pour y aller ?
+
+95
+00:09:04,000 --> 00:09:06,000
+-Je vais faire mon maximum 
+pour trouver quelqu’un.
+
+96
+00:09:07,500 --> 00:09:09,000
+<p class="comment">(Voix OFF Homme)</p>
+-On a reçu
+
+97
+00:09:09,500 --> 00:09:12,000
+les nouvelles coordonnées 
+du satellite envoyé 
+par les Américains.
+
+98
+00:09:12,500 --> 00:09:14,000
+-Lancement de rotation 
+de l’antenne !
+
+99
+00:09:14,500 --> 00:09:17,500
+<p class="noise">(Bruit mécanique de rotation)</p>
+
+100
+00:09:18,000 --> 00:09:20,000
+-Rotation de l’antenne lancée !
+
+101
+00:09:28,500 --> 00:09:30,000
+<p class="noise">(Arrêt bruit de rotation. 
+Sonnerie d’alerte se déclenche)</p>
+
+102
+00:09:30,500 --> 00:09:32,000
+-L’antenne est immobilisée...
+
+103
+00:09:32,500 --> 00:09:34,000
+C’est quoi le problème là, 
+ça vient d’où ?
+
+104
+00:09:34,500 --> 00:09:36,500
+-Les rouages sont 
+complètement bloqués
+
+105
+00:09:37,000 --> 00:09:38,500
+-Ça peut venir du moteur
+
+106
+00:09:39,000 --> 00:09:41,000
+ou de quelque chose 
+de bloqué dans les rouages.
+
+107
+00:09:42,000 --> 00:09:43,500
+-On un problème 
+avec un tube électronique.
+
+108
+00:09:44,000 --> 00:09:45,500
+-Oui, oui nos équipes 
+sont dessus.
+
+109
+00:09:47,000 --> 00:09:48,500
+-Le moteur principal a lâché !!!
+
+110
+00:09:49,000 --> 00:09:51,500
+Je répète, 
+le moteur principal a lâché.
+
+111
+00:09:52,000 --> 00:09:54,500
+-Il faut passer 
+sur le moteur secondaire !!!
+
+112
+00:09:55,000 --> 00:09:57,500
+Il faut que quelqu’un actionne 
+la procédure de lancement.
+
+113
+00:09:58,000 --> 00:10:00,500
+-Il faut appuyer 
+sur le bouton clignotant 
+à côté de l’écran de contrôle.
+
+114
+00:10:01,000 --> 00:10:02,500
+<p class="noise">(Arrêt de la sonnerie d’alerte)</p>
+
+115
+00:10:03,000 --> 00:10:04,500
+<p class="noise">(On entend à nouveau 
+les bruits de rotation)</p>
+
+116
+00:10:05,000 --> 00:10:06,500
+-C’est bon, 
+On a déclenché
+
+117
+00:10:07,000 --> 00:10:09,000
+le moteur secondaire 
+depuis la salle des machines.
+
+118
+00:10:09,500 --> 00:10:11,000
+-Moteur secondaire lancé !
+
+119
+00:10:12,000 --> 00:10:16,000
+-Est-ce qu’on a encore le temps 
+de capter le signal du satellite ?
+
+120
+00:10:16,500 --> 00:10:18,000
+-Je ne sais pas du tout...
+
+121
+00:10:20,000 --> 00:10:22,000
+<p class="noise">(Arrêt bruit de rotation) </p>
+
+122
+00:10:22,500 --> 00:10:24,500
+-Mesdames, Messieurs,
+
+123
+00:10:25,000 --> 00:10:28,000
+merci de vous rendre 
+au centre de réception vidéo !
+
+124
+00:10:33,000 --> 00:10:39,500
+<p class="noise">(La porte s’ouvre. Musique 
+d’ambiance douce, envoutante.) </p>
+
+125
+00:10:40,000 --> 00:10:45,000
+<p class="noise">(Son ondulation nous porte et nous 
+fait voyager vers l’espace l’infini.) </p>

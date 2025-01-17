@@ -1,0 +1,18 @@
+  #button-container {
+      text-align: left;
+      margin-top: 10px;
+  }
+
+  button {
+      margin: 0 5px;
+      padding: 5px 10px;
+      font-size: 14px;
+  }
+  #taille {
+    color: white;
+    font-size: 14px;
+  }
+  #vitesse {
+    color: white;
+    font-size: 14px;
+  }

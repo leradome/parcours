@@ -1,0 +1,238 @@
+<html lang="fr-FR" class="js js_active  vc_desktop  vc_transform  vc_transform "><head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0"><meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+
+	
+	<style type="text/css">
+		  body {
+            background-color: black; /* Le fond de la page sera noir */
+            color: white; /* Le texte de la page sera blanc */
+        }
+	</style>
+
+
+ <div class="container" id="fondCoulsID" style="display: none;" >
+        <div class="color-box red" onclick="changeBackgroundColor('red')"></div>
+        <div class="color-box blue" onclick="changeBackgroundColor('blue')"></div>
+        <div class="color-box green" onclick="changeBackgroundColor('green')"></div>
+        <div class="color-box yellow" onclick="changeBackgroundColor('yellow')"></div>
+        <div class="color-box dimgray" onclick="changeBackgroundColor('dimgray')"></div>
+        <div class="color-box white" onclick="changeBackgroundColor('white')"></div>
+        <div class="color-box black" onclick="changeBackgroundColor('black')"></div>
+    </div>
+
+    <!-- Script JavaScript pour changer la couleur de fond -->
+    <script>
+    	window.onload = function() {
+        checkParams();
+    }
+        function changeBackgroundColor(color) {
+            document.body.style.backgroundColor = color;
+        }
+        function checkParams() {
+		     // 1. Récupérer l'URL actuelle
+		      let url = new URL(window.location.href);
+
+		      // 2. Récupérer les paramètres de l'URL
+		      let params = new URLSearchParams(url.search);
+
+		      // 3. Extraire la valeur de la clé "key"
+		      let testKey = params.get('test');
+		    	console.log("panneau couleurs à afficher ?")
+
+		    if(testKey!=null){
+		    	console.log("panneau couleurs affiché")
+		        document.getElementById("fondCoulsID").style.display = "block";
+		      }
+		}
+    </script>
+    <style>
+
+        /* Positionner les carrés en haut à gauche */
+        .container {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+        }
+
+        /* Style des carrés */
+        .color-box {
+            width: 50px;
+            height: 50px;
+            margin: 5px;
+            display: inline-block;
+            cursor: pointer;
+            border: 2px solid black; /* Ajouter une bordure */
+            box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3); /* Ajouter une ombre légère */
+        }
+
+        /* Les différentes couleurs des carrés */
+        .red { background-color: red; }
+        .blue { background-color: blue; }
+        .green { background-color: green; }
+        .yellow { background-color: yellow; }
+        .dimgray { background-color: dimgray; }
+        .white { background-color: white; }
+        .black { background-color: black; }
+
+			#iris_reduced {
+				position:fixed;right:0; bottom:80px;
+				cursor:pointer;
+				z-index: 999;
+				display:none;
+				max-width:130px;
+				width: 25%;
+			}
+			body {
+				background-color: black;
+			}
+
+			.dialog_video {
+				position: fixed;
+				padding:0px;
+				background: transparent;
+				background-color: transparent;
+				opacity: 0.95;
+				border: 0 !important;
+				border-radius:10px;
+			}
+			.dialog_video .ui-dialog-content {
+				overflow: inherit !important;
+				padding: 0;
+				min-height: 90% !important;
+				min-width: 100%;
+			}
+			.dialog_video video { border-radius:10px; background: transparent; background-color: transparent;visibility: initial !important; }
+			.dialog_video .ui-dialog-titlebar {background: none;border: 0;}
+			.dialog_video .ui-dialog-title {display: none;}
+			.dialog_video .ui-button.ui-dialog-titlebar-close {display:none;}
+			.dialog_video .dialog_close {
+				color: rgb(60 60 60);
+				cursor: pointer;
+				position:absolute;
+				top:-14px;
+				z-index: 5;
+				font-size:28px;
+				display:none;
+				right: -5px;
+
+			}
+			.dialog_video .dialog_expand {
+				top: -14px;
+				left:0px;
+				transform: rotate(-90deg);
+				text-align: center;
+				position: absolute;
+				display: inline-flex;
+				font-size: 17px;
+				display:none;
+			}
+			.dialog_video .ui-resizable-nw { padding:10px; }
+			/*.dialog_video video[controls]::-webkit-media-text-track-display{ transform: translateY(3em) !important; }*/
+			.dialog_video video::-webkit-media-text-track-display{ transform:  inherit !important;}
+
+
+		</style>
+	    <meta charset="utf-8" />
+	    <link href="style.css" rel="stylesheet">
+	</head><body class="home page-template-default page page-id-6619 nectar-auto-lightbox ascend wpb-js-composer js-comp-ver-6.6.0 vc_responsive" data-footer-reveal="false" data-footer-reveal-shadow="none" data-header-format="centered-logo-between-menu" data-body-border="off" data-boxed-style="" data-header-breakpoint="1000" data-dropdown-style="minimal" data-cae="easeOutQuart" data-cad="1000" data-megamenu-width="contained" data-aie="zoom-out" data-ls="magnific" data-apte="center_mask_reveal" data-hhun="1" data-fancy-form-rcs="1" data-form-style="minimal" data-form-submit="regular" data-is="minimal" data-button-style="rounded" data-user-account-button="false" data-flex-cols="true" data-col-gap="default" data-header-inherit-rc="false" data-header-search="false" data-animated-anchors="true" data-ajax-transitions="false" data-full-width-header="false" data-slide-out-widget-area="true" data-slide-out-widget-area-style="slide-out-from-right" data-user-set-ocm="off" data-loading-animation="none" data-bg-header="true" data-responsive="1" data-ext-responsive="true" data-ext-padding="90" data-header-resize="0" data-header-color="light" data-cart="false" data-remove-m-parallax="" data-remove-m-video-bgs="" data-m-animate="0" data-force-header-trans-color="light" data-smooth-scrolling="0" data-permanent-transparent="false" style="--scroll-bar-w: 0px">
+
+	<script type="text/javascript">
+	 (function(window, document) {
+
+		 if(navigator.userAgent.match(/(Android|iPod|iPhone|iPad|BlackBerry|IEMobile|Opera Mini)/)) {
+			 document.body.className += " using-mobile-browser ";
+		 }
+
+		 if( !("ontouchstart" in window) ) {
+
+			 var body = document.querySelector("body");
+			 var winW = window.innerWidth;
+			 var bodyW = body.clientWidth;
+
+			 if (winW > bodyW + 4) {
+				 body.setAttribute("style", "--scroll-bar-w: " + (winW - bodyW - 4) + "px");
+			 } else {
+				 body.setAttribute("style", "--scroll-bar-w: 0px");
+			 }
+		 }
+
+	 })(window, document);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script type="text/javascript" src="https://www.ives.fr/wp-content/themes/salient/js/init.js?ver=13.0.5" id="nectar-frontend-js"></script>
+<script type="text/javascript" src="https://www.ives.fr/wp-content/themes/salient/js/third-party/select2.min.js?ver=3.5.2" id="select2-js"></script>
+<script type="text/javascript" src="https://www.ives.fr/wp-content/plugins/js_composer_salient/assets/js/dist/js_composer_front.min.js?ver=6.6.0" id="wpb_composer_front_js-js"></script>
+<script type="text/javascript" src="https://www.ives.fr/wp-content/lsf/lsfweb.js?v1.0.0"></script>
+<script type="text/javascript">
+var lw = new LSFWeb({
+	videos: [
+		{
+			page:'/',
+			regex: false,
+			url_mov: 'https://www.ives.fr/wp-content/lsf/LSF_accueil.mov',
+			url_webm: 'https://www.ives.fr/wp-content/lsf/LSF_accueil.webm',
+			subtitles: [
+				{lang:'fr', label:'Français', url:'https://www.ives.fr/wp-content/lsf/LSF_accueil.vtt'},
+			]
+		},
+		{
+			page:'innovation',
+			regex: true,
+			url_mov: 'https://www.ives.fr/wp-content/lsf/LSF_innovation.mov',
+			url_webm: 'https://www.ives.fr/wp-content/lsf/LSF_innovation.webm',
+			subtitles: [
+				{lang:'fr', label:'Français', url:'https://www.ives.fr/wp-content/lsf/LSF_innovation.vtt'},
+			]
+		},
+		{
+			page:'/contact',
+			regex: true,
+			url_mov: 'https://www.ives.fr/wp-content/lsf/LSF_contact.mov',
+			url_webm: 'https://www.ives.fr/wp-content/lsf/LSF_contact.webm',
+			subtitles: [
+				{lang:'fr', label:'Français', url:'https://www.ives.fr/wp-content/lsf/LSF_contact.vtt'},
+			]
+		}
+	]
+});
+</script>
+
+
+	<div tabindex="-1" role="dialog" class="ui-dialog dialog_video draggable ui-widget ui-widget-content ui-front ui-draggable ui-resizable" aria-describedby="dialog_video" style="position: fixed; height: auto; width: 400px; top: 193px; left: 353px;" aria-labelledby="ui-id-1">
+		<div id="dialog_video" class="draggable ui-dialog-content ui-widget-content" style="width: auto; min-height: 0px; max-height: none; height: 387.203px;">
+			
+			<span class="dialog_expand" style="display: none;"><i class="fa fa-expand" style="width:24px;height:24px;top:3px;"></i></span>
+			<span class="dialog_close" style="display: none;"><i class="fa fa-times-circle"></i></span>
+			
+				<!-- <video class="draggable" playsinline="" preload="" muted="" loop="" controlslist="nodownload" disablepictureinpicture="" width="100%" height="100%" style="visibility: visible;">
+					<source src="https://youtu.be/ojLr3wGqyj0" type="video/mp4; codecs=&quot;hvc1&quot;">
+					<track label="Français" kind="captions" srclang="fr" src="LSF_accueil.vtt"></video> -->
+
+						<iframe width="100%" height="100%" src="https://www.youtube.com/embed/ojLr3wGqyj0" frameborder="0" allowfullscreen></iframe>
+
+		</div>
+
+		<div class="ui-resizable-handle ui-resizable-n" style="z-index: 90;"></div>
+		<div class="ui-resizable-handle ui-resizable-e" style="z-index: 90;"></div>
+		<div class="ui-resizable-handle ui-resizable-s" style="z-index: 90;"></div>
+		<div class="ui-resizable-handle ui-resizable-w" style="z-index: 90;"></div>
+		<div class="ui-resizable-handle ui-resizable-se ui-icon ui-icon-gripsmall-diagonal-se" style="z-index: 90;"></div>
+		<div class="ui-resizable-handle ui-resizable-sw" style="z-index: 90;"></div>
+		<div class="ui-resizable-handle ui-resizable-ne" style="z-index: 90;"></div>
+		<div class="ui-resizable-handle ui-resizable-nw" style="z-index: 90;"></div>
+	</div>
+</body></html>

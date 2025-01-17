@@ -16,33 +16,12 @@
             justify-content: center; /* Centrer horizontalement */
             align-items: center; /* Centrer verticalement */
         }
-        .btn-primary.room-specific {
-            background-color: #f16e00;
-            border-color: #f16e00;
-        }
-        .small {
-            font-size: 0.875em;
-            opacity: 0.8;
-        }
-.btn-primary {
-    white-space: pre-line !important;
-    line-height: 1.2;
-    padding: 10px 20px;
-}
-
-
-</style>
-
+    </style>
 <title>Scrolling Subtitles</title>
 
 </head>
 <body>
 
-<!-- <div class="title-bar"> -->
-  <div class="container-xl">
-    <h2 class="display-1"><center>Entrée devant le portique</center></h2>
-  <!-- </div> -->
-</div>
 
 <div id="infoSTTH" hidden="true"></div>
 <div id="timingSTTH" hidden="true"></div>
@@ -72,13 +51,13 @@
 </div>
 
 <! bouton simple : DEMARRER >
-<div id="containerGO" class="d-grid gap-3 col-6 mx-auto full-height">
+<!-- <div id="containerGO" class="d-grid gap-2 col-6 mx-auto full-height">
   <button id="btnGO" class="btn btn-primary btn-lg" type="button" onclick=launchSTT()>Démarrer le STT</button>
-  <button id="btnReturn" class="btn btn-secondary btn-sm" type="button" onclick="history.back()">retour</button>
-</div>
+  <button id="btnReturn" class="btn btn-secondary  btn-sm" type="button" onclick="location.href='index.html'">retour</button>
+</div> -->
 
 <! bouton en modal : DEMARRER >
-<!-- <div id="containerGO" class="modal" tabindex="-1">
+<div id="containerGO" class="modal" tabindex="-1">
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
@@ -87,12 +66,12 @@
       </div>
     
       <div class="modal-footer">
-        <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal" onclick="location.href='index.html'">Retour à l'accueil</button>
+        <!-- <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal" onclick="location.href='index.html'">Retour à l'accueil</button> -->
         <button id="btnGO" class="btn btn-primary btn-lg" type="button" onclick=launchSTT()>Démarrer le STT</button>
       </div>
     </div>
   </div>
-</div> -->
+</div>
 
 <div id="contentSTT">
   <div id="scrollSTT">  
@@ -103,17 +82,14 @@
 
 <script src="scripts/InfoAnimHideShow.js">// gestion des événements d'interaction et l'inactivité</script>
 <script src="scripts/fullScreen.js">// gestion d'affichage plein écran/écran normal</script>
-<script src="scripts/modePaysage.js">// gestion d'affichage paysage/portrait</script>
+<script src="scripts/modePaysage.js">// gestion d'affichage plein écran/écran normal</script>
 <script src="scripts/extractScriptForShowSTT.js">// extraction du script texte pour affichage</script>
 <script src="https://cdn.jsdelivr.net/npm/boosted@5.3.3/dist/js/boosted.bundle.min.js" integrity="sha384-3RoJImQ+Yz4jAyP6xW29kJhqJOE3rdjuu9wkNycjCuDnGAtC/crm79mLcwj1w2o/" crossorigin="anonymous"></script>
 
 <script>
 
 let isDemo      = false; // pour déclancher la boucle, utile pour les démos todo : changer de script SRT si besoin
-let isIntro     = false;
-var room        = -1;   // si -1, parcours intégral sur les 3 salles, 0 : entree devant le portique, 1, 2, 3 l'une des 3 salles
-var debPos      = 0;    // si 0, pas de passage de paramètre, donc par défaut, on prend le script en entier. sinon on prend les positions de debut et de fin dans le script du STT.
-var endPos      = 0;
+
 // ======== demarrage du STT
  function launchSTT(action) {
         var bodyElement = document.body;
@@ -123,10 +99,10 @@ var endPos      = 0;
         // sinon mode portrait
         
         resetOnLoad();
-        displaySubtitlesSTT(subtitles, isDemo, debPos, endPos); // TODO : ajout deb/fin posSTT passés en paramètres
-        
-        document.getElementById("btnGO").style.display = "none";
-        document.getElementById("btnReturn").style.display = "none";
+        displaySubtitlesSTT(subtitles, isDemo);
+
+        document.getElementById("btnGO").style.display = "none";        
+        // document.getElementById("btnReturn").style.display = "none";
 
         const containerGO  = document.getElementById('containerGO');
         containerGO.style.height = "0vh"
@@ -142,37 +118,19 @@ var endPos      = 0;
     let lastPos = 0;//subtitles.length - 1;
     let totalDuration = 0;//subtitles[lastPos].endTime - subtitles[0].startTime;
 
-function showEnd() {
-    const btnReturn = document.getElementById("btnReturn");
-    btnReturn.style.display = "block";
-    btnReturn.classList.remove('btn-secondary', 'btn-sm');
-    btnReturn.classList.add('btn-primary', 'btn-lg');
-    document.getElementById('containerGO').style.height = "100vh";
-}
-
 // ================================================================================== 
 window.onload = function() {
         checkParams();
         afficheBTNS(false);
-        updateTitleBtnIfNeed();
 
         // ========= Afficher la modale
-        // var myModal = document.getElementById('containerGO');
-        // myModal.style.display = "block";
+        var myModal = document.getElementById('containerGO');
+        myModal.style.display = "block";
         // ============================
 
         ScrollSTTDiv.style.border = "0px solid #FFF";
-        var scriptFile = "srt/scriptSTTofficielAvecCouleursP.srt";
-        if (isDemo == true) {
-            if (isIntro == true) {
-                scriptFile = "srt/scriptSTTDebut.srt";
-            } else {
-                scriptFile = "srt/scriptSTTDemo.srt";
-            }
-        } else if (room == 0) {
-            scriptFile = "srt/scriptSTTDebut.srt";
-        }
-        fetch(scriptFile)
+
+        fetch('srt/scriptSTTofficielAvecCouleursP.srt')
         .then(response => response.text())
         .then(data => {
              subtitles = parseSrt(data);
@@ -180,26 +138,6 @@ window.onload = function() {
         .catch(error => console.error('Error fetching subtitles:', error));
         //subtitles = parseSrt(SCRIPT_SRT); // pour script en local dans le systeme de fichiers
 }
-
-function updateTitleBtnIfNeed() {
-    const btnGO = document.getElementById('btnGO');
-    btnGO.style.whiteSpace = 'pre-line';
-    
-    if(room > 0) {
-        btnGO.textContent = `Démarrer le STT\n-\nSalle ${room}`;
-        btnGO.classList.add('room-specific');
-    } else if(room == 0) {
-        btnGO.textContent = `Démarrer le STT\n-\nEntrée devant le portique`;
-        btnGO.classList.add('room-specific');
-    } else {
-        btnGO.textContent = 'Démarrer le STT\n-\nParcours complet';
-        btnGO.classList.remove('room-specific');
-    }
-}
-
-
-
-
 
 // ==================================================================================
 // Fonction pour ajuster la taille de la police en fonction de la largeur de la fenêtre
@@ -239,9 +177,8 @@ function showInfo(subtitle, subtitlesLength) {
     var currentTimeSTT = currentTime - subtitle.startTime;
 
     //infoDivH.textContent = "Durée totale: " + convertTimeToTimeH(totalDuration) + "s ==> " + " scrollHeight : " + scrollingTextHeight + " -  textHeight : " + textContainerHeight 
-    
-    var msgDemo = isDemo ? "DEMO - " : "";
-    timingDivH.textContent = msgDemo + "Position: " + (posSTT+1) + "/" + subtitlesLength + " - [" + convertTimeToTimeH(currentTime) + "]" //subtitle.startTimeH  + " --> " + subtitle.endTimeH + "] - [" + convertTimeToTimeH(currentTime) + "] - durée STT: " + convertTimeToTimeH(dureeSTT) + " - [" + convertTimeToTimeH(currentTimeSTT) + "] " ;
+               
+    timingDivH.textContent = "Position: " + (posSTT+1) + "/" + subtitlesLength + " - [" + convertTimeToTimeH(currentTime) + "]" //subtitle.startTimeH  + " --> " + subtitle.endTimeH + "] - [" + convertTimeToTimeH(currentTime) + "] - durée STT: " + convertTimeToTimeH(dureeSTT) + " - [" + convertTimeToTimeH(currentTimeSTT) + "] " ;
 }
 function showInfosBts() {
     showInfosBtsPolice();
@@ -409,27 +346,13 @@ function checkParams() {
       let testKey = params.get('test'); // Ici, "keyValue" sera "4"
       let confKey = params.get('conf'); 
       let coulKey = params.get('coul'); 
-      let demoKey = params.get('demo'); 
-      let introKey = params.get('intro');
-      let sizeFontKey = params.get('size'); 
 
       var nbParams = 0;
 
     if(coulKey!=null){
         document.getElementById("labelColorSelect").style.display = "block";
         document.getElementById("colorSelect").style.display = "block";
-    }
-    if(demoKey!=null){
-        isDemo = true;
-    }
-    if(introKey!=null){
-        isDemo = true;
-        isIntro = true;
-    }
-
-    room   =  params.get('salle');
-    debPos =  params.get('debPos');
-    endPos =  params.get('endPos');
+      }
 
 }
 </script>

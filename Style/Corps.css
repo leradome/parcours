@@ -1,0 +1,98 @@
+
+
+        @font-face {
+            font-family: 'PoliceDfA';
+            src: url('../Fonts/AccessibleDfA-regular.ttf') format('truetype');
+            /* Ajoutez d'autres formats de police au besoin (woff, woff2, eot, etc.) */
+        }
+
+        body {
+            font-family: 'PoliceDfA', sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh; /* Utiliser la hauteur de la vue (viewport height) pour centrer verticalement */
+            background-color: black; /* Le fond de la page sera noir */
+            color: white; /* Le texte de la page sera blanc */
+        }
+
+        #contentSTT {
+            flex: 1; /* Permet au contenu de prendre tout l'espace disponible */
+            display: flex;
+            justify-content: center;
+            align-items: center; /* Modifier de flex-end à flex-start */
+            /*margin-top: -3em; /* Ajustez la valeur en fonction du décalage souhaité */
+        }
+        
+        #vide {
+            min-height: 5em;
+        }
+
+        #scrolling-text {
+            width: 50%; /* Largeur de la zone de défilement à 80% de la largeur de la page */
+            height: 200px; /* Hauteur de la zone de défilement */
+            /*overflow: hidden; /* Masque le texte qui dépasse de la zone */
+            border: 0px solid #CCC; /* Bordure pour la zone de défilement */
+            font-size: 24px; /* Taille de la police en pixels (ajustez selon vos besoins) */
+        }
+
+        #text-container {
+            animation: scroll 5s linear ; /* Animation de défilement par défaut */
+/*            background-color: darkgray; /* Couleur de fond de l'élément pour tests */
+        }
+
+        @keyframes scroll {
+            0% {
+                transform: translateY(100%);
+            }
+            100% {
+                transform: translateY(-200px);
+            }
+        }
+    
+    #scrollSTT {
+        background-color: black;
+        height: 200px;
+        width: 60%;
+        overflow: hidden; /* hides any part of the STT below the horizon */
+        /*flex: 1; /* Permet au contenu de prendre tout l'espace disponible */
+        display: flex;
+        justify-content: center;
+        align-items: flex-end; /* Modifier de flex-end à flex-start */
+        border: 5px solid red; /* Bordure pour la zone de défilement */
+        font-size: 24px; /* Taille de la police en pixels (ajustez selon vos besoins) */
+    }
+    #STT {
+        animation: 30s linear infinite STT-rise;  /* mettre toujours en infinite et vider le texte à la fin */
+    }
+
+    @keyframes STT-rise {
+        from {
+        /* pushes the STT down past the viewport STT est déplacé vers le bas de sa hauteur et donc en bas de scroll-STT*/
+            transform: translateY(100%);
+        }
+        to {
+        /* returns the STT to its default position STT est déplacé vers le haut de 200px qui est la hauteur de scroll-STT*/
+            transform: translateY(-200px);
+        }
+    }
+
+        #button-container {
+            text-align: left;
+            margin-top: 10px;
+        }
+
+        button {
+            margin: 0 5px;
+            padding: 5px 10px;
+            font-size: 14px;
+        }
+        #taille {
+          color: white;
+          font-size: 14px;
+        }
+        #vitesse {
+          color: white;
+          font-size: 14px;
+        }

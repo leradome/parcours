@@ -1,0 +1,44 @@
+/*
+Blanc, lorsqu’un personnage parle à l’écran
+Jaune, lorsqu’un personnage parle hors-champ
+Rouge, pour les indications de bruit
+Magenta, pour les indications musicales
+Cyan, pour les réflexions intérieures ou les commentaires en voix off
+Vert, pour les retranscriptions de langues étrangères
+*/
+
+/* Règles pour le mode "tout en noir" */
+#STT.all-black,
+#STT.all-black .comment,
+#STT.all-black .music,
+#STT.all-black .voiceover,
+#STT.all-black .noise,
+#STT.all-black .stranger,
+#STT.all-black .default {
+    color: black !important; /* Force la couleur du texte à être noire */
+}
+
+.music {
+    color: #00ff00; /* Magenta, pour les indications musicales 148 0 107 */
+}
+
+.voiceover {
+    color: #ffff00; /* Jaune, lorsqu’un personnage parle hors-champ */
+}
+
+.noise {
+    color: #ff0000; /* Rouge, pour les indications de bruit */
+}
+
+.comment {
+    color: #00ffff; /* Cyan, pour les réflexions intérieures ou les commentaires en voix off */
+}
+
+.stranger {
+    color: #007C00; /* Vert, pour les retranscriptions de langues étrangères 0 174 0*/
+}
+
+.default {
+    color: white; /* Blanc pour le texte par défaut */
+}
+

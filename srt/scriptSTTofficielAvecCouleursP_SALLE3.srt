@@ -1,0 +1,252 @@
+1
+00:11:08,000 --> 00:11:10,000
+<p class="comment">(Voix d'homme) </p>
+Mesdames, Messieurs,
+
+2
+00:11:11,000 --> 00:11:13,500
+le Ministère 
+des Postes et Télécommunications 
+est heureux de vous accueillir
+
+3
+00:11:14,000 --> 00:11:17,000
+à la station télécommunication 
+spatiale de Pleumeur-Bodou.
+
+4
+00:11:17,500 --> 00:11:20,000
+<p class="noise">(Douce musique 
+d’ambiance envoutante. )</p>
+
+5
+00:13:02,000 --> 00:13:03,500
+<p class="comment">(Voix OFF Femme)</p>
+
+6
+00:13:04,000 --> 00:13:10,000
+Veuillez-vous diriger
+vers le centre de visionnage.
+
+7
+00:14:07,000 --> 00:14:11,500
+<p class="noise">(Voix au loin 
+d’une transmission qui résonne)</p>
+
+8
+00:14:43,000 --> 00:14:45,500
+<p class="noise">(La musique d’ambiance s’arrête)</p>
+
+134
+00:14:46,000 --> 00:14:47,000
+<p class="comment">(Voix OFF Homme)</p>
+
+135
+00:14:47,500 --> 00:14:49,000
+-Est-ce qu’on reçoit le signal ?
+
+136
+00:14:49,500 --> 00:14:51,000
+-rien pour l’instant.
+
+137
+00:14:51,500 --> 00:14:54,000
+-Et les Anglais, 
+ils ont réussi à l’intercepter ?
+
+138
+00:14:54,500 --> 00:14:57,000
+<p>-Non plus</p>
+<p>-Pourtant le satellite est bien là ?</p>
+
+139
+00:14:57,500 --> 00:14:59,500
+-Oui monsieur… 
+Mais on ne reçoit rien.
+
+140
+00:15:00,000 --> 00:15:02,000
+-Est-ce que quelqu’un 
+a quelque chose ?
+
+141
+00:15:02,500 --> 00:15:04,000
+-Non monsieur, 
+rien pour le moment.
+
+142
+00:15:04,500 --> 00:15:06,500
+-Allez, allez, allez… 
+allez…
+
+143
+00:15:07,000 --> 00:15:09,000
+-On devrait l’avoir en ligne 
+de mire d’ici quelques secondes.
+
+144
+00:15:09,500 --> 00:15:12,000
+-Allez mon p’tit satellite, 
+ne nous lâche pas maintenant…
+come on…
+
+145
+00:15:12,500 --> 00:15:14,000
+-Allez allez, allez vas-y…
+
+146
+00:15:14,500 --> 00:15:17,000
+-Ca va marcher, 
+on va le capter ce signal…
+
+147
+00:15:17,500 --> 00:15:19,000
+-Oh Jesus…
+
+148
+00:15:19,500 --> 00:15:21,500
+<p class="comment">(Musique d’ambiance claire, 
+douce et lumineuse.)</p>
+
+149
+00:15:22,000 --> 00:15:23,500
+<p class="comment">(Des images sont transmises 
+sur les écrans.)</p>
+
+150
+00:15:24,000 --> 00:15:25,000
+<p class="comment">(Voix OFF Homme)</p>
+
+151
+00:15:25,500 --> 00:15:26,500
+-Hey oh les gars, 
+on a quelque chose !
+
+152
+00:15:27,000 --> 00:15:28,500
+-On a une image !
+
+153
+00:15:29,000 --> 00:15:32,000
+<p class="comment">(Voix OFF Femme) </p>
+-On est en direct 
+avec les Etats-Unis !
+
+154
+00:15:32,500 --> 00:15:34,000
+<p class="noise">(Applaudissements)</p>
+
+155
+00:15:34,500 --> 00:15:36,000
+-Mesdames, messieurs,
+
+156
+00:15:36,500 --> 00:15:39,500
+nous regardons 
+les 1ères images retransmises 
+en direct par satellite !
+
+157
+00:15:40,000 --> 00:15:42,500
+-Félicitation les gars, 
+on l’a fait ! C’est génial !
+
+158
+00:15:43,000 --> 00:15:45,500
+<p>-Ca marche !</p>
+<p>-Oh ça marche, ça marche !</p>
+
+159
+00:15:46,000 --> 00:15:47,000
+-Bravo !
+
+160
+00:15:47,500 --> 00:15:49,500
+-Je vous l’avais dit 
+qu’on y arriverait ! Quel succès !
+
+161
+00:15:50,000 --> 00:15:52,500
+-Ca marche !
+<p class="stranger">Congratulation ! congratulation !</p>
+
+162
+00:15:53,000 --> 00:15:55,500
+<p>-Oh c’est génial !</p>
+<p>-Ca marche !</p>
+<p>-C’est une première mondiale !!!</p>
+
+163
+00:15:56,000 --> 00:15:58,000
+-Allez les gars, 
+on ne va pas rater ça,
+
+164
+00:15:58,500 --> 00:16:01,500
+Il faut immortaliser ce moment.
+Tout le monde en place pour la photo.
+
+165
+00:16:02,000 --> 00:16:04,000
+Vous aussi… 
+Mettez-vous bien devant l’appareil.
+
+166
+00:16:04,500 --> 00:16:07,000
+<p>-Tiens, viens prêt de moi.</p>
+<p>-Oui resserrez-vous sur la gauche.</p>
+
+167
+00:16:07,500 --> 00:16:09,500
+<p>-Viens là.</p>
+<p>-Tout le monde est prêt.</p>
+
+168
+00:16:10,000 --> 00:16:12,500
+<p>-Ouais, comme ça là ?</p>
+<p>-Souriez...  Trois ? deux, un …</p>
+
+169
+00:16:13,000 --> 00:16:15,000
+<p class="noise">(bruit d’appareil photo)</p>
+<p class="noise">(Flash lumineux de la prise de photo)</p>
+
+170
+00:16:15,500 --> 00:16:18,000
+-C’est, c’est incroyable 
+ce qu’il se passe…
+
+171
+00:16:18,500 --> 00:16:22,000
+Non mais regarde ce qu’on a fait ! 
+C’est une première dans l’histoire.
+
+172
+00:16:22,500 --> 00:16:25,000
+Tu imagines le potentiel 
+que ça représente !
+
+173
+00:16:25,500 --> 00:16:28,000
+Ce qu’on pourra faire avec 
+dans quelques années.
+
+174
+00:16:28,500 --> 00:16:30,500
+J’ose à peine imaginer…
+
+175
+00:16:40,500 --> 00:16:45,000
+<p class="noise">(Musique d’ambiance de plus en plus 
+majestueuse, et dynamique)</p>
+
+176
+00:16:45,500 --> 00:16:55,500
+Sous la voute du dôme, 
+des images défilent 
+au rythme du temps et de l’histoire…
+
+177
+00:17:00,000 --> 00:18:00,000
+--- FIN DU SURTITRAGE ---
+

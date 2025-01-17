@@ -1,0 +1,166 @@
+1
+00:00:00,000 --> 00:00:07,000
+<p class="noise">
+(Bruits de pas,
+sonnerie de téléphone, 
+bruits ambiants, 
+machine à écrire...)
+</p>
+
+2
+00:00:08,000 --> 00:00:14,000
+<p class="comment">
+(Voix OFF Femme) 
+</p>
+Bienvenue dans le Bureau d’études 
+du Râdome.
+
+3
+00:00:15,000 --> 00:00:21,000
+Pour toute question, 
+adressez-vous à l’ingénieur présent.
+
+4
+00:00:22,000 --> 00:00:32,000
+<p class="noise">(Bruits de fond, machine à écrire)</p>
+
+5
+00:00:34,000 --> 00:00:36,000
+Bonjour. 
+
+6
+00:00:37,000 --> 00:00:45,000
+Bienvenue dans le bureau d’étude 
+où une partie de ce projet 
+hors norme a été conçue.
+
+7
+00:00:47,000 --> 00:00:50,500
+Je vous avoue que le moment 
+n’est pas le mieux choisi...
+
+8
+00:00:52,000 --> 00:00:55,000
+D’ici quelques minutes, 
+nous allons tenter d’établir,
+
+9
+00:00:56,000 --> 00:00:59,000
+pour la première fois 
+dans l’histoire,
+
+10
+00:00:59,600 --> 00:01:05,000
+une liaison télévisuelle 
+par satellite 
+entre deux continents.
+
+11
+00:01:05,600 --> 00:01:09,000
+Nous devons recevoir le signal 
+depuis les États-Unis
+
+12
+00:01:09,600 --> 00:01:13,000
+via le satellite Telstar 
+qui a été mis en orbite hier...
+
+13
+00:01:13,600 --> 00:01:16,000
+Cette grande boule blanche, 
+est un Radôme :
+
+14
+00:01:16,600 --> 00:01:20,000
+<p>« RA » pour RADAR.</p>
+<p>« Dôme » pour dôme.</p>
+
+15
+00:01:20,600 --> 00:01:25,000
+Il recouvre l’immense antenne que 
+vous verrez tout à l’heure,
+
+16
+00:01:25,600 --> 00:01:28,000
+pour la protéger des intempéries.
+
+17
+00:01:30,600 --> 00:01:36,000
+L’antenne, qu’on surnomme 
+« le cornet » ou « l'oreille », 
+à cause de son apparence,
+
+18
+00:01:36,600 --> 00:01:40,000
+est censée recevoir les signaux 
+envoyés par les Américains.
+
+19
+00:01:40,600 --> 00:01:45,000
+Je dis « censée » 
+parce qu’on a fini la construction 
+il y a à peine trois jours…
+
+20
+00:01:45,600 --> 00:01:49,000
+Et on n’a pas encore pu vérifier 
+si tout marche bien…
+
+21
+00:01:51,600 --> 00:01:54,500
+<p class="noise">(Sonnerie de téléphone) </p>
+
+22
+00:01:55,600 --> 00:01:58,500
+Excusez-moi, je dois répondre.
+N’hésitez pas à être curieux,
+
+23
+00:01:59,000 --> 00:02:05,500
+à vous balader, à regarder 
+les documents qui trainent, 
+à utiliser les téléphones…
+
+24
+00:02:06,000 --> 00:02:09,500
+Vous trouverez plein de choses 
+super intéressantes.
+
+25
+00:02:10,000 --> 00:02:13,500
+Je reviens tout de suite.
+
+26
+00:02:14,000 --> 00:02:17,500
+<p class="comment">(L'homme tourne le dos. 
+Bruits de machine à écrire.)</p>
+
+27
+00:02:19,000 --> 00:02:23,500
+<p class="noise">(Sonnerie de téléphone, 
+machines à écrire.)</p>
+
+28
+00:02:26,000 --> 00:02:30,500
+<p class="noise">(Bruits de pas.)</p>
+
+29
+00:02:31,000 --> 00:02:38,500
+<p class="noise">(Conversations, sonneries 
+de téléphone au loin, ou plus proche,
+machines à écrire.)</p>
+
+30
+00:02:40,000 --> 00:02:43,500
+On vient de recevoir un télex :
+
+31
+00:02:44,000 --> 00:02:50,500
+le satellite TELSTAR 
+a dérivé de son orbite et 
+nous avons perdu son signal.
+
+32
+00:02:52,000 --> 00:03:00,000
+--- FIN DE LA DEMO ---
+

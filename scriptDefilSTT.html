@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="Style/CodesCouleurs.css" rel="stylesheet">
+<link href="Style/anim.css" rel="stylesheet">
+<link href="Style/infoAnim.css" rel="stylesheet">
+<title>Scrolling Subtitles</title>
+    <!-- <style>
+        #infoSTTH, #timingSTTH {
+            display: none; /* Les rendre invisibles au chargement */
+        }
+    </style> -->
+
+</head>
+<body>
+<div id="infoSTTH"></div>
+<div id="timingSTTH"></div>
+<div id="contentSTT">
+  <div id="scrollSTT">  
+      <div id="STT"></div>
+  </div>
+</div>
+
+<div id="vide"></div>
+<div id="vide"></div>
+
+<script>
+
+
+window.onload = function() {
+    resetOnLoad();
+        fetch('srt/scriptSTTofficielAvecCouleurs.srt')
+        .then(response => response.text())
+        .then(data => {
+
+            const subtitles = parseSrt(data);
+            displaySubtitlesDefilText(subtitles);
+            })
+        .catch(error => console.error('Error fetching subtitles:', error));
+
+
+        function parseSrt(srtData) {
+            const subtitleBlocks = srtData.trim().split('\n\n');
+            return subtitleBlocks.map(block => {
+                const lines = block.split('\n');
+                //console.log(lines)
+                if (lines.length >= 3) {
+                    const index = parseInt(lines[0]);
+                    const times = lines[1].split(' --> ');
+                    const startTime = convertTime(times[0]);
+                    const endTime = convertTime(times[1]);
+                    const startTimeH = times[0];
+                    const endTimeH = times[1];
+                    const text = lines.slice(2).join('\n');
+                    return { index, startTime, endTime, text, startTimeH,  endTimeH};
+                } else {
+                    return null; // Ignore invalid subtitle blocks
+                }
+            }).filter(subtitle => subtitle !== null);
+        }
+
+        function convertTime(timeStr) {
+            const parts = timeStr.split(':');
+            const secondsParts = parts[2].split(',');
+            const hours = parseInt(parts[0]);
+            const minutes = parseInt(parts[1]);
+            const seconds = parseInt(secondsParts[0]);
+            const milliseconds = parseInt(secondsParts[1]);
+            return hours * 3600 + minutes * 60 + seconds + milliseconds / 1000;
+        }
+
+        function convertTimeToTimeH(timeSec) {
+            var value = timeSec / 60;
+            const hours =  Math.floor(timeSec / 3600);
+            const minutes = Math.floor((timeSec % 3600) / 60);
+            const seconds = timeSec % 60;
+            return minutes + "m " + seconds + "s"
+        }
+
+        function displaySubtitlesDefilText(subtitles) {
+            let posSTT = 0;             // position liste des STTs
+            let currentTime = 0;        // 
+            const vitDefilement = 30;   // en px/secondes (modifiable par l'utilisateur pour un confort de lecture)
+            let lastPos = subtitles.length - 1;
+            let totalDuration = subtitles[lastPos].endTime - subtitles[0].startTime;
+            let dureeSTT = 0;
+
+            var scrollSTTD  = document.getElementById('scrollSTT');
+            var STTD        = document.getElementById('STT');
+
+            scrollSTTD.style.border = "2px solid black";
+
+
+            function showSubtitle() {
+                if (posSTT < subtitles.length) {
+                        
+                    const subtitle = subtitles[posSTT];
+                                                
+                    showInfo(subtitle)
+
+                    if (currentTime == subtitle.startTime) {
+                        console.log("=========== displaySubtitles : " + posSTT + " =============") 
+
+                        STTD.innerHTML = subtitle.text;
+
+                        // ==================================================================================
+                        // calcul vitesse defilement
+                        dureeSTT = subtitle.endTime - subtitle.startTime ;
+                        var diff = STTD.offsetHeight - scrollSTTD.offsetHeight;
+                        var totalH = STTD.offsetHeight + scrollSTTD.offsetHeight;
+                        var vit = totalH / dureeSTT;
+
+                        // calculer la vitesse de defilement en fonction de la durée et de la hauteur
+                        //vit = Math.floor(((STTD.offsetHeight * 2) + scrollSTTD.offsetHeight) / duree)
+
+                        if (diff <= 0)      { vit = 0; }         // affichage fixe
+                        else /*if (vit > duree)*/ { vit = dureeSTT; }      // vit défilement limitée à la durée
+
+                        resetAnimation(vit);
+                    }
+
+                    if (currentTime >= subtitle.endTime) { 
+                        console.log("endTime currentTime:" + currentTime)
+                        STTD.innerHTML = " ";  
+                        posSTT++; 
+                    } 
+
+                    currentTime++; 
+                }
+            }
+
+            function resetAnimation(vit) {
+                STTD.style.animation = 'none';
+                STTD.offsetHeight; 
+                STTD.style.animation = null;
+                STTD.style.animation = `${vit}s linear infinite STT-anim`;
+                console.log(STTD.style.animation)
+            }
+
+            function showInfo(subtitle) {
+                const timingDivH = document.getElementById('timingSTTH');
+                const infoDivH = document.getElementById('infoSTTH');
+                // Calcul de la hauteur de l'élément text-container
+                let textContainerHeight = STTD.offsetHeight;
+
+                // Calcul de la hauteur de l'élément scrolling-text
+                let scrollingTextHeight = scrollSTTD.offsetHeight;
+
+                dureeSTT = subtitle.endTime - subtitle.startTime ;
+
+
+                infoDivH.textContent = "Durée totale: " + convertTimeToTimeH(totalDuration) + "s ==> " + " scrollHeight : " + scrollingTextHeight + " -  textHeight : " + textContainerHeight 
+                           
+                timingDivH.textContent = "Position: " + (posSTT+1) + "/" + subtitles.length + " [" + convertTimeToTimeH(currentTime) + "] - [" + subtitle.startTimeH  + " --> " + subtitle.endTimeH + "] - durée " + convertTimeToTimeH(dureeSTT) + " - (durée anim : " + dureeSTT + "s)" ;
+                                //console.log("currentTime: " + currentTime + " - onOff: " + onOff)
+            }
+
+            setInterval(showSubtitle, 1000); // Vérifie périodiquement pour afficher les sous-titres suivants
+        }
+    }
+     
+
+
+function resetAnimationCSS() {
+    var scrollSTTD  = document.getElementById('scrollSTT');
+    var STTD        = document.getElementById('STT');
+
+  // marche si stype se trouve dans le fichier CSS
+  // Supprimer la classe d'animation
+  STTD.classList.remove("STT-animation");
+
+  // Forcer le reflow pour appliquer la suppression de classe
+  void STTD.offsetWidth;
+
+  // Réappliquer la classe d'animation
+  STTD.classList.add("STT-animation");
+}
+  
+    // ==================================================================================
+
+    function setKeyframes(vit) {
+        var scrollSTTD = document.getElementById('scrollSTT');
+            console.log("setKeyframes")
+
+        // Sélectionnez la feuille de style
+        const feuilleDeStyle = document.styleSheets[1]; // Remplacez 1 par l'index de votre feuille de style contenant les règles @keyframes
+
+        // Accédez aux règles de la feuille de style
+        const reglesCSS = feuilleDeStyle.cssRules || feuilleDeStyle.rules;
+
+        // Parcourez les règles pour trouver les règles @keyframes
+        for (let i = 0; i < reglesCSS.length; i++) {
+            const regle = reglesCSS[i];
+            if (regle.type === CSSRule.KEYFRAMES_RULE && regle.name === 'STT-anim') {
+                // Modifiez les valeurs de la règle @keyframes
+                regle.deleteRule('0%');
+                regle.appendRule('0% { transform: translateY(100%); }');//+ scrollSTTD.offsetHeight +'px); }');
+                regle.deleteRule('100%');
+                regle.appendRule('100% { transform: translateY(-'+ scrollSTTD.offsetHeight +'px); }');
+                break; // Sortez de la boucle une fois que la règle a été mise à jour
+            }
+        }
+    }
+
+    function showRegles() {
+        console.log("showRegles")
+        // Sélectionnez la feuille de style
+        const feuilleDeStyle = document.styleSheets[1]; // Remplacez 0 par l'index de votre feuille de style
+
+        // Accédez aux règles de la feuille de style
+        const reglesCSS = feuilleDeStyle.cssRules || feuilleDeStyle.rules;
+
+        // Parcourez les règles pour trouver les règles @keyframes
+        for (let i = 0; i < reglesCSS.length; i++) {
+            const regle = reglesCSS[i];
+            if (regle.type === CSSRule.KEYFRAMES_RULE && regle.name === 'STT-anim') {
+                // Affichez le nom de la règle @keyframes
+                console.log(`Nom de la règle @keyframes : ${regle.name}`);
+
+                // Affichez les étapes de la règle @keyframes
+                for (let j = 0; j < regle.cssRules.length; j++) {
+                    const etape = regle.cssRules[j];
+                    console.log(`Étape ${j}: ${etape.keyText} { ${etape.style.cssText} }`);
+                }
+            }
+        }
+    }
+    // ==================================================================================
+
+
+
+</script>
+
+
+<script src="scripts/InfoAnimHideShow.js">// gestion des événements d'interaction et l'inactivité
+</script>
+
+
+
+</body>
+</html>
